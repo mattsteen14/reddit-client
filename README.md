@@ -198,10 +198,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Arrange code review session.
-- [ ] Add instructions to page to make it clearer what user needs to do.
-- [ ] Edit & personalise styling with CSS.
-- [ ] Use surge to deploy.
+- [x] Version control. Set up on GitHub.
+- [ ] Plan project.
+- [ ] Wireframe the application.
+- [ ] Create files and run it locally.
+- [ ] Build the components.
+- [ ] Add Reddit data.
+- [ ] Testing and dubugging.
+- [ ] Deploy and publish to the web.
+- [ ] Share on Codecademy forums for feedback.
 
 See the [open issues](https://github.com/mattsteen14/reddit-client/issues) for a full list of proposed features (and known issues).
 
