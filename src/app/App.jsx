@@ -4,12 +4,13 @@ import {
   BrowserRouter,
   Routes
 } from 'react-router-dom'
+import Header from '../features/Header/Header'
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={}>
+        <Route path="/" element={<Header/>}>
         <Route />
         </Route>
       </Routes>

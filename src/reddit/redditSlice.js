@@ -1,15 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const redditSlice = createSlice({
-  name: '',
-  initialState: {
+    name: 'reddit',
+    initialState: {
+        reddit: {}
+    },
+    reducers: {
 
-  },
-  reducers: {
-    
-  }
+    }
 });
 
-export const {} = redditSlice.actions;
+export const { } = redditSlice.actions;
 
 export default redditSlice.reducer;

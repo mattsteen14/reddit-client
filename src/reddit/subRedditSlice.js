@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const subRedditSlice = createSlice({
     name: 'subReddit',
     initialState: {
-
+        subReddit: {}
     },
     reducers: {
 
