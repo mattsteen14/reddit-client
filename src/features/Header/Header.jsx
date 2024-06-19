@@ -2,6 +2,7 @@ import React from 'react'
 import './Header.css';
 import { HiOutlineSearch } from "react-icons/hi";
 import { FaReddit } from "react-icons/fa";
+import { CiLogin, CiLogout } from "react-icons/ci";
 
 export default function Header() {
   return (
@@ -19,6 +20,9 @@ export default function Header() {
         />
         <button type='submit' aria-label='Search'>
             <HiOutlineSearch />
+        </button>
+        <button>
+            <CiLogin />
         </button>
       </form>
     </header>
