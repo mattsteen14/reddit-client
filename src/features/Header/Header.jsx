@@ -1,16 +1,24 @@
 import React from 'react'
+import './Header.css';
+import { HiOutlineSearch } from "react-icons/hi";
+import { FaReddit } from "react-icons/fa";
 
 export default function Header() {
   return (
     <header>
         <div className='logo'>
-      <svg></svg>
+      <FaReddit className='logo-icon'/>
       <p>Reddit<span>Already</span></p>
       </div>
       <form className='search'>
-        <input type='text' placeholder='Search' aria-label='Search posts' value></input>
+        <input 
+        type='text' 
+        placeholder='Search' 
+        aria-label='Search posts' 
+        
+        />
         <button type='submit' aria-label='Search'>
-            <svg></svg>
+            <HiOutlineSearch />
         </button>
       </form>
     </header>

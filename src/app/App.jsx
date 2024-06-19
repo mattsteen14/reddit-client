@@ -3,8 +3,8 @@ import {
   Route,
   BrowserRouter,
   Routes
-} from 'react-router-dom'
-import Header from '../features/Header/Header'
+} from "react-router-dom";
+import Header from '../features/Header/Header';
 
 export default function App() {
   return (

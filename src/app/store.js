@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+// import counterReducer from '../features/counter/counterSlice';
 import redditReducer from '../reddit/redditSlice';
 import subRedditReducer from '../reddit/subRedditSlice';
 
