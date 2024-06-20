@@ -5,16 +5,20 @@ import {
   Routes
 } from "react-router-dom";
 import './App.css';
+import Home from '../features/Home/Home';
 import Header from '../features/Header/Header';
+import Subreddits from '../features/Subreddits/Subreddits';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Header/>}>
-        <Route />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  )
+    <body>
+      <Header />
+      <main>
+        <Home />
+      </main>
+      <aside>
+        <Subreddits />
+      </aside>
+    </body>
+  );
 }
