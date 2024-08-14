@@ -80,7 +80,7 @@ The aside section to the right of the main section will display a stack of subre
 
 ### Wireframe
 
-! [RedditAlready wireframe] (https://raw.githubusercontent.com/mattsteen14/reddit-client/public/main/RedditAlready_wireframe1.png)
+![RedditAlready wireframe](https://raw.githubusercontent.com/mattsteen14/reddit-client/public/main/RedditAlready_wireframe1.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
