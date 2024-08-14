@@ -72,9 +72,15 @@ For this project, you will build an application for Reddit using everything youâ
 
 [Completed Project Example - RedditMinimal](https://reddit-client.netlify.app)
 
-### My Comments
+### Project Design
 
-Will add when project complete as per brief.
+As you can see from the wireframe below, I wanted to keep the design simple and minimal. There will be header section with the reddit logo and a span of 'Reddit' to be the same colour(TBD) on the left, a search bar in the middle then a log in button on the far right. 
+The main home section/component will display a vertical stream of posts that will have the subreddit, time posted and the OP name above each post, up/plus & down/minus arrows to the left of each post to upvote or downvote and display the amount of likes and below each post there will be a clickable comment icon with the amount of comments so far. Once clicked all of the comments for that post will display under the post.
+The aside section to the right of the main section will display a stack of subreddits to choose from to display in the home component. 
+
+### Wireframe
+
+![RedditAlready wireframe] (https://github.com/mattsteen14/reddit-client/blob/main/public/RedditAlready_wireframe1.png?raw=true)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
