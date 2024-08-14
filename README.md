@@ -76,8 +76,6 @@ For this project, you will build an application for Reddit using everything youâ
 
 Will add when project complete as per brief.
 
-*NB - all 'counter' files are pre loaded when I created the react redux app. They are just there for reference. No counter components will render.*
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
