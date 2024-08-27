@@ -16,7 +16,7 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
-<h3 align="center">Reddit Client</h3>
+<h3 align="center">RedditAlready</h3>
 
   <p align="center">
     Codecademy Full Stack Engineer path - Portfolio Project
