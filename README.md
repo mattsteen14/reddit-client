@@ -209,8 +209,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## Roadmap
 
 - [x] Version control. Set up on GitHub.
-- [ ] Plan project.
-- [ ] Wireframe the application.
+- [x] Plan project.
+- [x] Wireframe the application.
 - [ ] Create files and run it locally.
 - [ ] Build the components.
 - [ ] Add Reddit data.
