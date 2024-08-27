@@ -75,8 +75,10 @@ For this project, you will build an application for Reddit using everything youâ
 ### Project Design
 
 As you can see from the wireframe below, I wanted to keep the design simple and minimal. There will be header section with the reddit logo and a span of 'Reddit' to be the same colour(TBD) on the left, a search bar in the middle then a log in button on the far right. 
-The main home section/component will display a vertical stream of posts that will have the subreddit, time posted and the OP name above each post, up/plus & down/minus arrows to the left of each post to upvote or downvote and display the amount of likes and below each post there will be a clickable comment icon with the amount of comments so far. Once clicked all of the comments for that post will display under the post.
-The aside section to the right of the main section will display a stack of subreddits to choose from to display in the home component. 
+
+The main home section/component will display a vertical stream of posts that will have the subreddit, time posted and the OP name above each post, up/plus & down/minus arrows to the left of each post to upvote or downvote and display the amount of likes and below each post there will be a clickable comment icon with the amount of comments so far. Once clicked all of the comments for that post will display under the post. Ultimately I want the feed to display a stream of the most recent and relevant posts from all of the users followed subreddits.
+
+The aside section to the right of the main section will display a stack of subreddits to choose from so that the feed in the home component will only focus on that subreddits posts. Ideally, the user should be able to link the top 'home' link in order for the home component to display a feed of all most recent and relevant posts.
 
 ### Wireframe
 
