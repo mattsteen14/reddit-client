@@ -102,7 +102,7 @@ For this project, you will build an application for Reddit using everything youâ
 
 - Write end-to-end tests for the application
 
-###Â Future Work
+### Future Work
 
 - Feature a log in button to allow users the ability to log into their reddit account
 
