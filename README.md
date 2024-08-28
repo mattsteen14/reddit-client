@@ -59,8 +59,6 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -71,6 +69,48 @@
 For this project, you will build an application for Reddit using everything you’ve learned, including React and Redux. Reddit is a website where people share links to articles, media and other things on the web. The Reddit API provides data which you will integrate into your application. The application will allow users to view and search posts and comments provided by the API."
 
 [Completed Project Example - RedditMinimal](https://reddit-client.netlify.app)
+
+### Project Objectives
+
+- Integrate Reddit API into the application
+
+- Create a responsive application that adapts to any device (desktop to mobile)
+
+- Create a responsive application that can be viewed on any modern browser
+
+- Application accessible at an URL
+
+- The application will allow users to view posts and comments provided by the API as well as other data such as amount of upvotes and comments, the post timestamp and the subreddit name and original poster name of each post
+
+- The main home screen will be a feed of the most recent and relevant posts from all subreddits
+
+- Users will be able to upvote and downvote posts with the total votes being updated instantly on the app
+
+- All of the comments for each post will be initially hidden but will appear when the user clicks on the comment icon
+
+- The application will allow users to search for posts and comments provided by the API
+
+- Data can be filtered based on categories and subreddits that are predefined
+
+- A detailed view (modal or new page/route) is shown when the user selects an item
+
+- Utilise animations and transitions when posts are loading
+
+- Users are able to leave an error state
+
+- Write unit tests for components using Jest and Enzyme
+
+- Write end-to-end tests for the application
+
+### Future Work
+
+- Feature a log in button to allow users the ability to log into their reddit account
+
+- Add share button to posts
+
+- Create a hidden drop down menu column to filter data
+
+- Make the subreddits aside column appear when clicked
 
 ### Project Design
 
@@ -86,8 +126,6 @@ The aside section to the right of the main section will display a stack of subre
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 ### Built With
 
 - HTML5
@@ -99,8 +137,6 @@ The aside section to the right of the main section will display a stack of subre
 - [Visual Studio Code](https://code.visualstudio.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -222,8 +258,6 @@ See the [open issues](https://github.com/mattsteen14/reddit-client/issues) for a
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -240,16 +274,12 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTACT -->
 ## Contact
@@ -260,8 +290,6 @@ Project Link: [https://github.com/mattsteen14/reddit-client](https://github.com/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
@@ -270,8 +298,6 @@ Project Link: [https://github.com/mattsteen14/reddit-client](https://github.com/
 * [Choose an Open Source License](https://choosealicense.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
