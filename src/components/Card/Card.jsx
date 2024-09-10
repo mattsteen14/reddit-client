@@ -1,10 +1,12 @@
 import React from 'react'
 import './Card.css';
 
-export const Card = () => {
+export const Card = ({ children }) => {
   return (
-    <div>
-      
+    <div 
+    className='card'
+    >
+      {children}
     </div>
-  )
-}
+  );
+};

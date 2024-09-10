@@ -2,7 +2,7 @@ import React from 'react'
 import './Header.css';
 import { HiOutlineSearch } from "react-icons/hi";
 import { FaReddit } from "react-icons/fa";
-import { CiLogin, CiLogout } from "react-icons/ci";
+// import { CiLogin, CiLogout } from "react-icons/ci";
 
 export const Header = () => {
   return (
@@ -21,9 +21,9 @@ export const Header = () => {
         <button type='submit' aria-label='Search'>
             <HiOutlineSearch />
         </button>
-        <button>
+        {/* <button>
             <CiLogin />
-        </button>
+        </button> */}
       </form>
     </header>
   )

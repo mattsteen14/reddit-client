@@ -1,44 +1,33 @@
 import React from 'react'
 import './Post.css';
-import { PostLoading } from './PostLoading';
-import { useGetSubredditPostsQuery } from '../../reddit/redditApiSlice';
-// import {
-//     TiMessage
-// } from 'react-icons/ti';
+import {
+    TiMessage
+} from 'react-icons/ti';
+import { 
+  PiArrowFatUpLight 
+} from "react-icons/pi";
 
-export const Post = () => {
-  const {
-    data: posts,
-    error,
-    isLoading
-  } = useGetSubredditPostsQuery();
-
-  if (isLoading) 
-    return
-      <div>
-        <PostLoading />
-      </div>;
-
-  if (error) 
-    return
-      <div>
-        <h2>
-          FAILED TO LOAD CONTENT
-        </h2>
-        <button>
-          RETRY
-        </button>
-      </div>;
-
+export const Post = ({ post }) => {
   return (
-    <ul>
-      {posts.map((post) => (
-        <li 
-        key={post.id}
-        >
+    <div className='post'>
+        <h2>
           {post.title}
-        </li>
-      ))}
-    </ul>
+        </h2>
+        <p>
+          {post.body}
+        </p>
+        <div className='post-footer'>
+          <span>
+          <PiArrowFatUpLight />
+            {post.score}
+          </span>
+          <button>
+            <TiMessage />
+          </button>
+          <span>
+            {post.num_comments}
+          </span>
+        </div>
+    </div>
   )
 }
