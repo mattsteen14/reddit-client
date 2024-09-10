@@ -4,7 +4,7 @@ import { HiOutlineSearch } from "react-icons/hi";
 import { FaReddit } from "react-icons/fa";
 import { CiLogin, CiLogout } from "react-icons/ci";
 
-export default function Header() {
+export const Header = () => {
   return (
     <header>
         <div className='logo'>

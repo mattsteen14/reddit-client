@@ -1,10 +1,11 @@
 import React from 'react'
 import './Home.css';
+import { Post } from '../Post/Post'; 
 
-export default function Home() {
+export const Home = () => {
   return (
     <div>
-      
+      <Post />
     </div>
   )
 }
