@@ -10,6 +10,9 @@ import {
 export const Post = ({ post }) => {
   return (
     <div className='post'>
+      <div post-header>
+
+      </div>
         <h2>
           {post.title}
         </h2>

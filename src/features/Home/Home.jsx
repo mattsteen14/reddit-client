@@ -12,14 +12,16 @@ export const Home = () => {
     isLoading
   } = useGetSubredditPostsQuery();
 
-  if (isLoading) 
-    return
+  if (isLoading) {
+    return(
       <div>
         <PostLoading />
-      </div>;
+      </div>
+      );
+}
 
-  if (error) 
-    return
+  if (error) {
+    return(
       <div>
         <h2>
           FAILED TO LOAD CONTENT
@@ -27,8 +29,9 @@ export const Home = () => {
         <button>
           RETRY
         </button>
-      </div>;
-
+      </div>
+      );
+}
   return (
     <div>
       {posts.map((post) => (
