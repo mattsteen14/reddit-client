@@ -26,7 +26,7 @@ export const Home = () => {
       {isFetching && <h2>Fetching...</h2>}
       {error &&
         <div>
-          <h2>Error: {error.message}</h2>
+          <h2>Error: {error}</h2>
           <h2>
             FAILED TO LOAD CONTENT
           </h2>

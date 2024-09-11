@@ -22,7 +22,7 @@ export const Subreddits = () => {
         <div>
             {isLoading && <h2>Loading...</h2>}
             {isFetching && <h2>Fetching...</h2>}
-            {error && <h2>Error: {error.message}</h2>}
+            {error && <h2>Error: {error}</h2>}
             {isSuccess && (
                 <div className='subreddits'>
                     <h2>Subreddits</h2>
@@ -34,7 +34,7 @@ export const Subreddits = () => {
                             >
                                 <img
                                 src=''
-                                alt={`Popular icon`}
+                                alt={`Popular icon `}
                                 className='popular-icon'
                                 />
                                 Popular
@@ -50,7 +50,7 @@ export const Subreddits = () => {
                                 >
                                     <img
                                     src={subreddit.icon_img}
-                                    alt={`${subreddit.display_name} icon`}
+                                    alt={`${subreddit.display_name} icon `}
                                     className='subreddit-icon'
                                     />
                                 {subreddit.display_name}
