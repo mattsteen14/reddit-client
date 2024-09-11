@@ -2,34 +2,32 @@ import React from 'react'
 import './Comment.css';
 import { useGetPostCommentsQuery } from '../../reddit/redditApiSlice';
 
-export const Comment = ({permalink}) => {
+export const Comment = ({ permalink }) => {
   const {
     data: comments,
     error,
-    isLoading
+    isLoading,
+    isFetching,
+    isSuccess
   } = useGetPostCommentsQuery(permalink);
 
-  if (isLoading)
-    return
-      <div>
-        Loading...
-      </div>;
-
-  if (error)
-    return
-      <div>
-        Error: {error.message}
-      </div>;
-
   return (
-    <ul>
-      {comments.map((comment) => (
-        <li
-        key={comment.id}
-        >
-          {comment.body}
-        </li>
-      ))}
-    </ul>
+    <div>
+      {isLoading && <h2>Loading...</h2>}
+      {isFetching && <h2>Fetching...</h2>}
+      {error && <h2>Error: {error.message}</h2>}
+      {isSuccess && (
+        <div className='comment'>
+          {comments.map((comment) => (
+            <p
+              key={comment.id}
+            >
+              {comment.body}
+            </p>
+          ))}
+        </div>
+      )
+      }
+    </div>
   )
 }
