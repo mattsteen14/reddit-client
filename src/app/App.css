@@ -1,4 +1,35 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.app {
+  position: relative;
+  top: max(60px, 10vh);
+  max-width: 100vw;
+  display: flex;
+  padding-left: max(40px, 3.5vw);
+  padding-right: max(3vw, 30px);
+  column-gap: 50px;
+  margin-top: 20px;
+}
+
+.app > main {
+  flex: 7 1 0;
+}
+
+.app > aside {
+  flex: 3 1 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .app > aside {
+    display: none;
+  }
+}
+
+/*.App {
   text-align: center;
 }
 
@@ -36,4 +67,4 @@
   100% {
     transform: translateY(0px);
   }
-}
+}*/

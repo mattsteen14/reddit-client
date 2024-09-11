@@ -6,7 +6,7 @@ import { Subreddits } from '../features/Subreddits/Subreddits';
 
 export default function App() {
   return (
-    <body>
+    <div className='app'>
       <Header />
       <main>
         <Home />
@@ -14,6 +14,6 @@ export default function App() {
       <aside>
         <Subreddits />
       </aside>
-    </body>
+    </div>
   );
 }
