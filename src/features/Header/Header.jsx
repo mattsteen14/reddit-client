@@ -9,7 +9,7 @@ export const Header = () => {
     <header>
         <div className='logo'>
             <FaReddit className='logo-icon'/>
-            <p>Reddit<span>Already</span></p>
+            <p><span className='reddit-span'>Reddit</span>Already</p>
         </div>
         <form className='search'>
             <input 
