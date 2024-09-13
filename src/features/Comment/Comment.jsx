@@ -26,9 +26,7 @@ export const Comment = ({ permalink }) => {
               alt={`${comment.author} profile `}
               className='user profile image'
               />
-              <h3
-                key={comment.id}
-              >
+              <h3>
                 {comment.author}
               </h3>
               <span
