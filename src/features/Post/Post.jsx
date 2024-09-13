@@ -25,7 +25,9 @@ export const Post = ({ post }) => {
           <PiArrowFatUpLight />
             {post.score}
           </span>
-          <span>
+          <span
+          className='post-timestamp'
+          >
             {timeAgo(post.created_utc)}
           </span>
           <button>

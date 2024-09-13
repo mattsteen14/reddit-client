@@ -1,5 +1,6 @@
 import React from 'react'
 import './Comment.css';
+import { timeAgo } from '../../utils/timeAgo';
 import { useGetPostCommentsQuery } from '../../reddit/redditApiSlice';
 
 export const Comment = ({ permalink }) => {
@@ -30,6 +31,11 @@ export const Comment = ({ permalink }) => {
               >
                 {comment.author}
               </h3>
+              <span
+              className='comment-timestamp'
+              >
+                {timeAgo(comment.created_utc)}
+              </span>
               <p
                 key={comment.id}
               >
