@@ -19,11 +19,23 @@ export const Comment = ({ permalink }) => {
       {isSuccess && (
         <div className='comment'>
           {comments.map((comment) => (
-            <p
-              key={comment.id}
-            >
-              {comment.body}
-            </p>
+            <div>
+              <img
+              src={comment.author.icon_img}
+              alt={`${comment.author} profile `}
+              className='user profile image'
+              />
+              <h3
+                key={comment.id}
+              >
+                {comment.author}
+              </h3>
+              <p
+                key={comment.id}
+              >
+                {comment.body}
+              </p>
+            </div>
           ))}
         </div>
       )
