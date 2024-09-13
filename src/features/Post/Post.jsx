@@ -1,5 +1,6 @@
 import React from 'react'
 import './Post.css';
+import { timeAgo } from '../../utils/timeAgo';
 import {
     TiMessage
 } from 'react-icons/ti';
@@ -23,6 +24,9 @@ export const Post = ({ post }) => {
           <span>
           <PiArrowFatUpLight />
             {post.score}
+          </span>
+          <span>
+            {timeAgo(post.created_utc)}
           </span>
           <button>
             <TiMessage />
