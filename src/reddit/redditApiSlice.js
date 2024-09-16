@@ -25,7 +25,7 @@ export const redditApi = createApi({
         }),
         // Fetch search subreddits
         getSearchResults: builder.query({
-            query: (term) => `/search.json?q=${term}&type=sr`,
+            query: (term) => `/search.json?q=${term}&type=link`,
             transformResponse: (response) => response.data.children.map((subreddit) => subreddit.data),
         }),
     }),

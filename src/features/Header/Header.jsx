@@ -6,15 +6,16 @@ import { FaReddit } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
 import { setSearch } from '../../reddit/searchSlice';
 import { setView } from '../../reddit/viewSlice';
+import { useState } from 'react'
 
 export const Header = () => {
+  const [ searchInputLocal, setSearchInputLocal ] = useState('')
   const dispatch = useDispatch();
   
   const handleSearch = (e) => {
     e.preventDefault();
-    const searchTerm = document.getElementById('search-input').value;
     dispatch(setView('search'))
-    dispatch(setSearch(searchTerm))
+    dispatch(setSearch(searchInputLocal))
   }
   
   return (
@@ -28,8 +29,8 @@ export const Header = () => {
             type='text' 
             placeholder='Search' 
             aria-label='Search posts'
-            id='search-input'
-            />
+            value={searchInputLocal}
+            onChange={(e) => setSearchInputLocal(e.target.value)} />
             <button type='submit' aria-label='Search'>
                 <HiOutlineSearch />
             </button>
