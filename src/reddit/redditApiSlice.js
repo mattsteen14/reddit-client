@@ -23,6 +23,11 @@ export const redditApi = createApi({
             query: (permalink) => `${permalink}.json`,
             transformResponse: (response) => response[1].data.children.map((comment) => comment.data),
         }),
+        // Fetch search subreddits
+        getSearchResults: builder.query({
+            query: (term) => `/search.json?q=${term}&type=sr`,
+            transformResponse: (response) => response.data.children.map((subreddit) => subreddit.data),
+        }),
     }),
 });
 
@@ -31,6 +36,7 @@ export const {
     useGetSubredditPostsQuery,
     useGetSubredditsQuery,
     useGetPostCommentsQuery,
+    useGetSearchResultsQuery,
 } = redditApi;
 
 export default redditApi.reducer;
