@@ -24,14 +24,17 @@ export const Home = () => {
         </div>}
       {error &&
         <div>
-          <h2>Error: {error}</h2>
-          <h2>
-            FAILED TO LOAD CONTENT
-          </h2>
-          <button className='retry-button'>
-            RETRY
+          <h2>Error: {error.status}</h2>
+          <h3>({error.data.message})</h3>
+          <button
+            type='button'
+            className='retry-button'
+            onClick={() => window.location.reload}
+          >
+            TRY AGAIN
           </button>
-        </div>}
+        </div>
+        }
       {isSuccess && (
         <div className='post'>
           {posts.map((post) => (

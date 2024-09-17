@@ -20,7 +20,12 @@ export const Subreddits = () => {
     return (
         <div>
             {isLoading && <h2>Loading...</h2>}
-            {error && <h2>Error: {error}</h2>}
+            {error && 
+            <div>
+            <h2>Error: {error.status}</h2>
+            <h3>({error.data.message})</h3>
+            </div>
+            }
             {isSuccess && (
                 <div className='subreddits'>
                     <h2>Subreddits</h2>

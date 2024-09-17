@@ -12,24 +12,27 @@ export const Search = () => {
         isLoading,
         isSuccess
     } = useGetSearchResultsQuery(term);
-    
+
     return (
         <div>
             {isLoading &&
-            <div>
-                <h2>Loading...</h2>
-                <PostLoading />
-            </div>}
+                <div>
+                    <h2>Loading...</h2>
+                    <PostLoading />
+                </div>}
             {error &&
-            <div>
-                <h2>Error: {error}</h2>
-                <h2>
-                    FAILED TO LOAD CONTENT
-                </h2>
-                <button className='retry-button'>
-                    RETRY
-                </button>
-            </div>}
+                <div>
+                    <h2>Error: {error.status}</h2>
+                    <h3>({error.data.message})</h3>
+                    <button
+                        type='button'
+                        className='retry-button'
+                        onClick={() => window.location.reload}
+                    >
+                        TRY AGAIN
+                    </button>
+                </div>
+            }
             {isSuccess &&
                 <div className='post'>
                     Results
