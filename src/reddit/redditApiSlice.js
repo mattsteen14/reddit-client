@@ -2,11 +2,38 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const API_ROOT = 'https://www.reddit.com';
 
+// Custom baseQuery with error handling
+const baseQuery = async (args, api, extraOptions) => {
+    try {
+        const result = fetchBaseQuery({
+            baseUrl: API_ROOT
+        })(args, api, extraOptions);
+
+        if (result.error) {
+            // Handle specific error codes
+            if (result.error.status === 429) {
+                // Rate limit exceeded
+                console.error('Rate limit exceeded. Please try again later.');
+            };
+        }
+        // Add more error handling logic here if needed
+        return result;
+    } catch (error) {
+        console.error('Error:',error);
+        return {
+            error: {
+                status: error.status,
+                data: error.data,
+                message: error.message
+            }
+        };
+    }
+};
+
+
 export const redditApi = createApi({
     reducerPath: 'redditApi', // Unique key for slice in Redux store
-    baseQuery: fetchBaseQuery({
-        baseUrl: API_ROOT
-    }),
+    baseQuery,
     endpoints: (builder) => ({
         // Fetch subreddit posts
         getSubredditPosts: builder.query({
