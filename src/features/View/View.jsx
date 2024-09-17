@@ -6,6 +6,6 @@ export const View = () => {
     const view = useSelector((state) => state.view.view)
     
     return (
-        view.toLowerCase() == 'search' ? <Search /> : <Home />
+        view.toLowerCase() === 'search' ? <Search /> : <Home />
     )
 }

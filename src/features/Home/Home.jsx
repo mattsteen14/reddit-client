@@ -12,7 +12,6 @@ export const Home = () => {
     data: posts,
     error,
     isLoading,
-    isFetching,
     isSuccess
   } = useGetSubredditPostsQuery(selectSubreddit);
 
@@ -23,7 +22,6 @@ export const Home = () => {
           <h2>Loading...</h2>
           <PostLoading />
         </div>}
-      {isFetching && <h2>Fetching...</h2>}
       {error &&
         <div>
           <h2>Error: {error}</h2>
