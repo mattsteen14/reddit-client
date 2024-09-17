@@ -2,8 +2,8 @@ import { configureStore } from '@reduxjs/toolkit';
 import redditReducer from '../reddit/redditSlice';
 import subRedditReducer from '../reddit/subRedditSlice';
 import { redditApi } from '../reddit/redditApiSlice';
-import searchReducer from '../reddit/searchSlice';
-import viewReducer from '../reddit/viewSlice';
+import searchReducer from '../features/Search/searchSlice';
+import viewReducer from '../features/View/viewSlice';
 
 export const store = configureStore({
   reducer: {

@@ -4,7 +4,7 @@ import { useGetSearchResultsQuery } from '../../reddit/redditApiSlice'
 import { Post } from '../Post/Post'
 import { PostLoading } from '../Post/PostLoading'
 
-function Search() {
+export const Search = () => {
     const term = useSelector((state) => state.search.search) || 'popular';
     const {
         data: posts,
@@ -45,5 +45,3 @@ function Search() {
         </div>
     )
 }
-
-export default Search;

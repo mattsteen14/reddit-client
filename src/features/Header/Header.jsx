@@ -1,12 +1,12 @@
 import React from 'react'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux';
 import './Header.css';
 import { HiOutlineSearch } from "react-icons/hi";
 import { FaReddit } from "react-icons/fa";
 // import { CiLogin, CiLogout } from "react-icons/ci";
-import { useDispatch } from 'react-redux';
-import { setSearch } from '../../reddit/searchSlice';
-import { setView } from '../../reddit/viewSlice';
-import { useState } from 'react'
+import { setSearch } from '../Search/searchSlice';
+import { setView } from '../View/viewSlice';
 
 export const Header = () => {
   const [ searchInputLocal, setSearchInputLocal ] = useState('')
