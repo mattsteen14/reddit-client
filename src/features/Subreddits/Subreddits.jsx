@@ -26,7 +26,7 @@ export const Subreddits = () => {
             {error && 
             <div>
             <h2>Error: {error.status}</h2>
-            <h3>({error.data?.message})</h3>
+            <h3>({error.error.message})</h3>
             </div>
             }
             {isSuccess && (
