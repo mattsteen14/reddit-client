@@ -55,6 +55,20 @@ export const redditApi = createApi({
             query: (term) => `/search.json?q=${term}&type=link`,
             transformResponse: (response) => response.data.children.map((subreddit) => subreddit.data),
         }),
+        getSubredditIcon: builder.query({
+            query: (subreddit) => `/r/${subreddit}/about.json`,
+            transformResponse: (response) => ({
+                ...response.data,
+                icon_img: response.data.icon_img,
+            }),
+        }),
+        getAuthorIcon: builder.query({
+            query: (author) => `/user/${author}/about.json`,
+            transformResponse: (response) => ({
+                ...response.data,
+                icon_img: response.data.icon_img,
+            }),
+        }),
     }),
 });
 
@@ -64,6 +78,8 @@ export const {
     useGetSubredditsQuery,
     useGetPostCommentsQuery,
     useGetSearchResultsQuery,
+    useGetSubredditIconQuery,
+    useGetAuthorIconQuery,
 } = redditApi;
 
 export default redditApi.reducer;
