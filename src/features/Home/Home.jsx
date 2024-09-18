@@ -25,7 +25,7 @@ export const Home = () => {
       {error &&
         <div>
           <h2>Error: {error.status}</h2>
-          <h3>({error.data.message})</h3>
+          <h3>({error.data?.message})</h3>
           <button
             type='button'
             className='retry-button'
