@@ -27,7 +27,7 @@ export const Search = () => {
                     <button
                         type='button'
                         className='retry-button'
-                        onClick={() => window.location.reload}
+                        onClick={() => window.location.reload()}
                     >
                         TRY AGAIN
                     </button>
