@@ -22,8 +22,9 @@ export const Search = () => {
                 </div>}
             {error &&
                 <div>
-                    <h2>Error: {error.status}</h2>
-                    <h3>({error.error.message})</h3>
+                    <h2>Failed to load content.</h2>
+                    <h3>Error: {error.status}</h3>
+                    <h4>{error.data?.message || error.message || error.error}</h4>
                     <button
                         type='button'
                         className='retry-button'

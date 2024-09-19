@@ -14,26 +14,26 @@ export const Comment = ({ permalink }) => {
   return (
     <div>
       {isLoading && <h2>Loading...</h2>}
-      {error && 
-      <div>
-      <h2>Error: {error.status}</h2>
-      <h3>({error.error.message})</h3>
-      </div>
+      {error &&
+        <div>
+          <h2>Error: {error.status}</h2>
+          <h3>{error.data?.message || error.message || error.error}</h3>
+        </div>
       }
       {isSuccess && (
         <div className='comment'>
           {comments.map((comment) => (
             <div>
               <img
-              src={comment.author.icon_img}
-              alt={`${comment.author} profile `}
-              className='user-profile-image'
+                src={comment.author.icon_img}
+                alt={`${comment.author} profile `}
+                className='user-profile-image'
               />
               <h3>
                 {comment.author}
               </h3>
               <span
-              className='comment-timestamp'
+                className='comment-timestamp'
               >
                 {timeAgo(comment.created_utc)}
               </span>
