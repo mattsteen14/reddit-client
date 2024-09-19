@@ -9,6 +9,9 @@ export const Subreddits = () => {
     const changeSubreddit = (newSubreddit) => {
         dispatch(setSubreddit(newSubreddit));
     };
+    const setPopular = () => {
+        dispatch(setSubreddit('r/popular'));
+    }
 
     const {
         data: subreddits,
@@ -30,10 +33,10 @@ export const Subreddits = () => {
                 <div className='subreddits'>
                     <h2>Subreddits</h2>
                     <ul>
-                        {/* Insert action to reset state back to default r/popular */}
                         <li>
                             <button
                             type='button'
+                            onClick={setPopular}
                             >
                                 <img
                                 src=''

@@ -9,7 +9,6 @@ export const subRedditSlice = createSlice({
         setSubreddit: (state, action) => {
             state.subReddit = action.payload;
         },
-        // Insert reducer to reset state back to default r/popular
     },
 });
 
