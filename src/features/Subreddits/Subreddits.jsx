@@ -35,8 +35,8 @@ export const Subreddits = () => {
                     <ul>
                         <li>
                             <button
-                                type='button'
-                                onClick={setPopular}
+                            type='button'
+                            onClick={setPopular}
                             >
                                 <img
                                     src=''
