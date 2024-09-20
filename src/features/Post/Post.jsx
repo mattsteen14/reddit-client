@@ -8,14 +8,10 @@ import {
   PiArrowFatUpLight
 } from "react-icons/pi";
 import {
-  useGetSubredditIconQuery,
   useGetAuthorIconQuery
 } from '../../reddit/redditApiSlice';
 
 export const Post = ({ post }) => {
-  const {
-    data: subredditIcon
-  } = useGetSubredditIconQuery(post.subreddit);
   const {
     data: authorIcon
   } = useGetAuthorIconQuery(post.author);
@@ -23,7 +19,7 @@ export const Post = ({ post }) => {
     <div className='post'>
       <div className='post-header'>
         <img
-          src={subredditIcon?.icon_img}
+          src={post.subreddit_icon}
           alt={`(${post.subreddit} icon)`}
           className='subreddit-post-icon'
         />

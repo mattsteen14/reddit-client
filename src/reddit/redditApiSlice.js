@@ -10,6 +10,7 @@ const baseQuery = async (args, api, extraOptions) => {
         })(args, api, extraOptions);
 
         if (result.error) {
+            console.log('Result error:', result.error);
             // Handle specific error codes
             if (result.error.status === 429) {
                 // Rate limit exceeded
@@ -30,15 +31,17 @@ const baseQuery = async (args, api, extraOptions) => {
     }
 };
 
-
 export const redditApi = createApi({
     reducerPath: 'redditApi', // Unique key for slice in Redux store
     baseQuery,
     endpoints: (builder) => ({
         // Fetch subreddit posts
         getSubredditPosts: builder.query({
-            query: (subreddit) => `${subreddit}.json`,
-            transformResponse: (response) => response.data.children.map((post) => post.data), // Transform the post to match your needs
+            query: (subreddit) => `${subreddit}.json?sr_detail=1`,
+            transformResponse: (response) => response.data.children.map((post) => ({
+                ...post.data,
+                subreddit_icon: post.data.sr_detail.icon_img, // Access the detailed subreddit information
+            })), 
         }),
         // Fetch subreddits
         getSubreddits: builder.query({
@@ -54,13 +57,6 @@ export const redditApi = createApi({
         getSearchResults: builder.query({
             query: (term) => `/search.json?q=${term}&type=link`,
             transformResponse: (response) => response.data.children.map((subreddit) => subreddit.data),
-        }),
-        getSubredditIcon: builder.query({
-            query: (subreddit) => `/r/${subreddit}/about.json`,
-            transformResponse: (response) => ({
-                ...response.data,
-                icon_img: response.data.icon_img,
-            }),
         }),
         getAuthorIcon: builder.query({
             query: (author) => `/user/${author}/about.json`,
@@ -78,7 +74,6 @@ export const {
     useGetSubredditsQuery,
     useGetPostCommentsQuery,
     useGetSearchResultsQuery,
-    useGetSubredditIconQuery,
     useGetAuthorIconQuery,
 } = redditApi;
 
