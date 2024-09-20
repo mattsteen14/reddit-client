@@ -23,11 +23,11 @@ export const Subreddits = () => {
     return (
         <div>
             {isLoading && <h2>Loading...</h2>}
-            {error && 
-            <div>
-            <h2>Error: {error.status}</h2>
-            <h3>({error.error.message})</h3>
-            </div>
+            {error &&
+                <div>
+                    <h2>Error: {error.status}</h2>
+                    <h3>({error.error.message})</h3>
+                </div>
             }
             {isSuccess && (
                 <div className='subreddits'>
@@ -39,9 +39,9 @@ export const Subreddits = () => {
                             onClick={setPopular}
                             >
                                 <img
-                                src=''
-                                alt={`Popular icon `}
-                                className='popular-icon'
+                                    src=''
+                                    alt={`Popular icon `}
+                                    className='popular-icon'
                                 />
                                 Popular
                             </button>
@@ -50,16 +50,16 @@ export const Subreddits = () => {
                             <li
                                 key={subreddit.id}
                             >
-                                <button 
-                                type='button'
-                                onClick={() => changeSubreddit(subreddit.display_name_prefixed)}
+                                <button
+                                    type='button'
+                                    onClick={() => changeSubreddit(subreddit.display_name_prefixed)}
                                 >
                                     <img
-                                    src={subreddit.icon_img}
-                                    alt={`${subreddit.display_name} icon `}
-                                    className='subreddit-icon'
+                                        src={subreddit.icon_img}
+                                        alt={`${subreddit.display_name} icon `}
+                                        className='subreddit-icon'
                                     />
-                                {subreddit.display_name}
+                                    {subreddit.display_name}
                                 </button>
                             </li>
                         ))}

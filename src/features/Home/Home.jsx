@@ -34,7 +34,7 @@ export const Home = () => {
             TRY AGAIN
           </button>
         </div>
-        }
+      }
       {isSuccess && (
         <div className='post'>
           {posts.map((post) => (
