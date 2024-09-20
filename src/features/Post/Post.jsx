@@ -8,6 +8,7 @@ import {
   PiArrowFatUpLight
 } from "react-icons/pi";
 import subredditLogo from '../../subredditLogo.svg';
+import userLogo from '../../userLogo.svg';
 import {
   useGetAuthorIconQuery
 } from '../../reddit/redditApiSlice';
@@ -21,6 +22,7 @@ export const Post = ({ post }) => {
       <div className='post-header'>
         <img
           src={post.subreddit_icon || subredditLogo}
+          onError={(e) => {e.target.src = subredditLogo}}
           alt={`(${post.subreddit} icon)`}
           className='subreddit-post-icon'
           width='50px'
@@ -35,7 +37,8 @@ export const Post = ({ post }) => {
           {timeAgo(post.created_utc)}
         </span>
         <img
-          src={authorIcon?.icon_img}
+          src={authorIcon?.icon_img || userLogo}
+          onError={(e) => {e.target.src = userLogo}}
           alt={`(${post.author} icon)`}
           className='author-icon'
           width='50px'
@@ -57,8 +60,6 @@ export const Post = ({ post }) => {
             src={post.url}
             alt=""
             className="post-image"
-            width='500px'
-            height='500px'
           />
         </div>
       </div>
