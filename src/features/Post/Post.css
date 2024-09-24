@@ -1,0 +1,97 @@
+/* Post Header section */
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.subreddit-post-icon, .author-icon {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.post-subreddit-name, .post-timestamp, .author-name {
+    margin-right: 10px;
+}
+
+.post-subreddit-name, .author-name {
+    font-weight: bold;
+}
+
+/* Post Content section */
+
+.post-title {
+    margin-bottom: 10px;
+}
+
+.post-body {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 5rem;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 1s ease-in-out;
+}
+
+.ellipsis-indicator {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 2em;
+    opacity: 0.7;
+    color: red;
+}
+
+.ellipsis-indicator::after {
+    content: '';
+    display: inline-block;
+    animation: ellipsis-animation 1.5s infinite;
+}
+
+@keyframes ellipsis-animation {
+    0% { content: ''; }
+    33% { content: '.'; }
+    66% { content: '..'; }
+    100% { content: '...'; }
+}
+
+.post-body:hover, .post-body:focus-within {
+    max-height: max-content;
+}
+
+.post-body:hover .ellipsis-indicator, .post-body:focus-within .ellipsis-indicator {
+    display: none;
+}
+
+.post-image-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 10px 0;
+    display: flex;
+}
+.post-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Post Footer section */
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.icon {
+    margin-right: 10px;
+}

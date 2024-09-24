@@ -1,4 +1,4 @@
-import React from 'react'
+import { React, useState, useEffect, useRef } from 'react'
 import './Post.css';
 import { timeAgo } from '../../utils/timeAgo';
 import {
@@ -14,6 +14,16 @@ import {
 } from '../../reddit/redditApiSlice';
 
 export const Post = ({ post }) => {
+  const [isOverflowing, setIsOverflowing] = useState(false);
+  const postBodyRef = useRef(null);
+
+  useEffect(() => {
+    const element = postBodyRef.current;
+    if (element.scrollHeight > element.clientHeight) {
+      setIsOverflowing(true);
+    }
+  }, [post.selftext]);
+
   const {
     data: authorIcon,
   } = useGetAuthorIconQuery(post.author);
@@ -22,13 +32,11 @@ export const Post = ({ post }) => {
       <div className='post-header'>
         <img
           src={post.subreddit_icon || subredditLogo}
-          onError={(e) => {e.target.src = subredditLogo}}
+          onError={(e) => { e.target.src = subredditLogo }}
           alt={`(${post.subreddit} icon)`}
           className='subreddit-post-icon'
-          width='50px'
-          height='50px'
         />
-        <span>
+        <span className='post-subreddit-name'>
           {post.subreddit_name_prefixed}
         </span>
         <span
@@ -38,13 +46,11 @@ export const Post = ({ post }) => {
         </span>
         <img
           src={authorIcon?.icon_img || userLogo}
-          onError={(e) => {e.target.src = userLogo}}
+          onError={(e) => { e.target.src = userLogo }}
           alt={`(${post.author} icon)`}
           className='author-icon'
-          width='50px'
-          height='50px'
         />
-        <span>
+        <span className='author-name'>
           u/{post.author}
         </span>
       </div>
@@ -52,8 +58,14 @@ export const Post = ({ post }) => {
         <h2 className='post-title'>
           {post.title}
         </h2>
-        <p className='post-body'>
+        <p
+          className={`post-body ${isOverflowing ? 'has-more-content' : ''}`}
+          ref={postBodyRef}
+        >
           {post.selftext}
+          {isOverflowing &&
+            <div className='ellipsis-indicator'>
+            </div>}
         </p>
         <div className='post-image-container'>
           <img
@@ -65,15 +77,13 @@ export const Post = ({ post }) => {
       </div>
       <div className='post-footer'>
         <span>
-          <PiArrowFatUpLight />
+          <PiArrowFatUpLight className='icon' />
           {post.score}
         </span>
         <button>
-          <TiMessage />
-        </button>
-        <span>
+          <TiMessage className='icon' />
           {post.num_comments}
-        </span>
+        </button>
       </div>
     </div>
   )

@@ -1,7 +1,21 @@
+aside {
+    position: fixed;
+    right: 0px;
+    max-height: calc(100vh - 67px);
+    width: fit-content;
+    background-color: white;
+    padding: 20px;
+    overflow-y: scroll;
+    border: solid 1px black;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+
 .subreddits li img {
-    
     width: auto;
     height: 50px;
+    border-radius: 50%;
 }
 
 .subreddits button {
@@ -10,8 +24,8 @@
     line-height: 50px;
     margin-bottom: 10px;
     display: flex;
-    justify-content: center;
     column-gap: 10px;
+    font-weight: bold;
 }
 
 .subreddits ul {

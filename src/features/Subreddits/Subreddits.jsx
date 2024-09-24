@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import subredditLogo from '../../subredditLogo.svg';
 import './Subreddits.css';
 import { useGetSubredditsQuery } from '../../reddit/redditApiSlice';
 import { setSubreddit } from '../../reddit/subRedditSlice';
@@ -39,7 +40,7 @@ export const Subreddits = () => {
                             onClick={setPopular}
                             >
                                 <img
-                                    src=''
+                                    src={subredditLogo}
                                     alt={`Popular icon `}
                                     className='popular-icon'
                                 />
@@ -55,7 +56,7 @@ export const Subreddits = () => {
                                     onClick={() => changeSubreddit(subreddit.display_name_prefixed)}
                                 >
                                     <img
-                                        src={subreddit.icon_img}
+                                        src={subreddit.icon_img || subredditLogo}
                                         alt={`${subreddit.display_name} icon `}
                                         className='subreddit-icon'
                                     />
