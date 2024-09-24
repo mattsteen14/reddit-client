@@ -30,29 +30,36 @@ export const Post = ({ post }) => {
   return (
     <div className='post'>
       <div className='post-header'>
-        <img
-          src={post.subreddit_icon || subredditLogo}
-          onError={(e) => { e.target.src = subredditLogo }}
-          alt={`(${post.subreddit} icon)`}
-          className='subreddit-post-icon'
-        />
-        <span className='post-subreddit-name'>
-          {post.subreddit_name_prefixed}
-        </span>
+        <div className='post-subreddit-info'>
+          <img
+            src={post.subreddit_icon || subredditLogo}
+            onError={(e) => { e.target.src = subredditLogo }}
+            alt={`(${post.subreddit} icon)`}
+            className='post-subreddit-icon'
+          />
+          <span className='post-subreddit-name'>
+            {post.subreddit_name_prefixed}
+          </span>
+        </div>
+
         <span
           className='post-timestamp'
         >
           {timeAgo(post.created_utc)}
         </span>
-        <img
-          src={authorIcon?.icon_img || userLogo}
-          onError={(e) => { e.target.src = userLogo }}
-          alt={`(${post.author} icon)`}
-          className='author-icon'
-        />
-        <span className='author-name'>
-          u/{post.author}
-        </span>
+
+        <div className='author-info'>
+          <img
+            src={authorIcon?.icon_img || userLogo}
+            onError={(e) => { e.target.src = userLogo }}
+            alt={`(${post.author} icon)`}
+            className='author-icon'
+          />
+          <span className='author-name'>
+            u/{post.author}
+          </span>
+        </div>
+
       </div>
       <div className='post-container'>
         <h2 className='post-title'>

@@ -3,19 +3,28 @@
 .post-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     margin: 10px 0;
+    word-break: break-word;
 }
 
-.subreddit-post-icon, .author-icon {
-    margin-right: 10px;
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    object-fit: cover;
+.post-subreddit-info, .author-info {
+    display: flex;
+    align-items: center;
+}
+
+.post-subreddit-icon, .author-icon {
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
 
 .post-subreddit-name, .post-timestamp, .author-name {
-    margin-right: 10px;
+    /* margin-right: 5px; */
+    font-size: 14px;
 }
 
 .post-subreddit-name, .author-name {
@@ -33,7 +42,7 @@
     line-height: 1.5;
     white-space: pre-wrap;
     word-wrap: break-word;
-    max-height: 5rem;
+    max-height: 10rem;
     overflow: hidden;
     position: relative;
     transition: max-height 1s ease-in-out;

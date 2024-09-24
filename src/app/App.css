@@ -5,66 +5,64 @@
 }
 
 .app {
-  position: relative;
-  top: max(60px, 10vh);
-  max-width: 100vw;
   display: flex;
-  padding-left: max(40px, 3.5vw);
-  padding-right: max(3vw, 30px);
+  flex-direction: row;
+  justify-content: space-between;
   column-gap: 50px;
-  margin-top: 20px;
+  padding: 20px;
+  margin-top: max(60px, 10vh);
 }
 
 .app > main {
-  flex: 7 1 0;
+  /* flex: 7 1 0; */
+  flex: 7;
+  min-width: 0;
+  padding-top: 10px;
 }
 
 .app > aside {
-  flex: 3 1 0;
+  /* flex: 3 1 0; */
+  flex: 3;
+  min-width: fit-content;
+  max-height: calc(100vh - max(60px, 10vh));
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .app {
+    padding-left: 20px;
+    padding-right: 20px;
+    column-gap: 20px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
+
+  .app {
+    flex-direction: column;
+    padding: 0;
+    margin: 20px;
+  }
+
+  .app > main {
+    margin-top: max(60px, 10vh);
+  }
+
   .app > aside {
     display: none;
   }
 }
 
-/*.App {
-  text-align: center;
-}
+@media only screen and (max-width: 600px) {
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
+  .app {
+    padding: 0;
+    margin: 20px;
   }
-}
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
+  .app > main {
+    margin-top: max(60px, 10vh);
+  }
 
-.App-link {
-  color: rgb(112, 76, 182);
 }
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}*/

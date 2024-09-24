@@ -1,9 +1,10 @@
 header {
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
     height: max(60px, 10vh);
+    z-index: 1000;
     display: flex;
     border-bottom: 1px solid black;
     justify-content: space-between;
@@ -11,6 +12,7 @@ header {
     padding-left: max(40px, 3.5vw);
     padding-right: max(3vw, 30px);
     background-color: white;
+    margin-bottom: 10px;
 }
 
 .logo-icon {
