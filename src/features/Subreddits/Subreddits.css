@@ -25,7 +25,8 @@ aside {
     margin-bottom: 10px;
     display: flex;
     column-gap: 10px;
-    font-weight: bold;
+    font-weight: 600;
+    color: #555555;
 }
 
 .subreddits ul {

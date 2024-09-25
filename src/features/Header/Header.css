@@ -27,6 +27,7 @@ header {
 
 .logo > p {
     display: inline;
+    font-family: 'Reddit Sans', sans-serif;
     font-size: 24px;
     font-weight: bold;
 }

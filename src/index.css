@@ -1,10 +1,10 @@
 body {
   margin: 0;
-  font-family: 'Reddit Sans', 'Reddit Sans Condensed' , 'Reddit Mono', 'Noto Sans', sans-serif, monospace , -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
+  font-family: 'Nunito', 'Reddit Sans', 'Ubuntu', 'Reddit Sans Condensed', 'Reddit Mono', 'Noto Sans', sans-serif, monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #5a9eef;
+  color: #555555;
 }
 
 code {
@@ -12,7 +12,8 @@ code {
     monospace;
 }
 
-button, a:hover {
+button,
+a:hover {
   cursor: pointer;
 }
 
