@@ -6,9 +6,10 @@ aside {
     background-color: white;
     padding: 20px;
     overflow-y: auto;
-    border: solid 1px black;
+    /* border: solid 1px black; */
     border-radius: 10px;
     margin-top: 10px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
 
 .subreddits li img {
