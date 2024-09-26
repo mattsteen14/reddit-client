@@ -21,8 +21,6 @@
   /* flex: 7 1 0; */
   flex: 7;
   min-width: 0;
-  height: var(--content-height);
-  overflow-y: auto;
   padding-top: 10px;
 }
 
@@ -30,7 +28,6 @@
   /* flex: 3 1 0; */
   flex: 3;
   min-width: fit-content;
-  height: var(--content-height);
   overflow-y: auto;
   margin-top: 10px;
 }
