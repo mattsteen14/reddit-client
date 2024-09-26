@@ -5,7 +5,7 @@
 
 .error {
     max-width: 900px;
-    max-height: calc(100vh - max(60px, 10vh));
+    max-height: var(--content-height);
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;

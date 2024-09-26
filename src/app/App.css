@@ -4,6 +4,10 @@
   padding: 0px;
 }
 
+:root {
+  --content-height: calc(100vh - max(60px, 10vh));
+}
+
 .app {
   display: flex;
   flex-direction: row;
@@ -17,7 +21,7 @@
   /* flex: 7 1 0; */
   flex: 7;
   min-width: 0;
-  height: calc(100vh - max(60px, 10vh));
+  height: var(--content-height);
   overflow-y: auto;
   padding-top: 10px;
 }
@@ -26,7 +30,7 @@
   /* flex: 3 1 0; */
   flex: 3;
   min-width: fit-content;
-  height: calc(100vh - max(60px, 10vh));
+  height: var(--content-height);
   overflow-y: auto;
   margin-top: 10px;
 }

@@ -25,10 +25,36 @@ header {
     color: #5a9eef;
 }
 
-.logo > p {
+.logo>p {
     display: inline;
     font-family: 'Reddit Sans', sans-serif;
     font-size: 24px;
     font-weight: bold;
 }
 
+@media only screen and (max-width: 600px) {
+    header {
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .logo {
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .logo-icon {
+        transform: scale(2);
+    }
+
+    .logo>p {
+        font-size: 1em;
+    }
+
+    .search {
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
