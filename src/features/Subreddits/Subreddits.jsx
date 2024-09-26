@@ -22,7 +22,7 @@ export const Subreddits = () => {
     } = useGetSubredditsQuery();
 
     return (
-        <div>
+        <div className='subreddits'>
             {isLoading && <h2>Loading...</h2>}
             {error &&
                 <div>
@@ -31,7 +31,7 @@ export const Subreddits = () => {
                 </div>
             }
             {isSuccess && (
-                <div className='subreddits'>
+                <div>
                     <h2>Subreddits</h2>
                     <ul>
                         <li>

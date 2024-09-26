@@ -35,10 +35,11 @@
 
 .post-title {
     margin-bottom: 10px;
-    /* font-weight: 600; */
+    color: #000;
 }
 
 .post-body {
+    color: #000;
     margin-bottom: 10px;
     line-height: 1.5;
     white-space: pre-wrap;
@@ -104,4 +105,6 @@
 
 .icon {
     margin-right: 10px;
+    font-size: 24px;
+    color: #000;
 }
