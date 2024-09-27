@@ -9,14 +9,6 @@
     word-break: break-word;
 }
 
-.post-subreddit-icon, .author-icon {
-    margin-right: 5px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
 /* Post Content section */
 
 .post-title {

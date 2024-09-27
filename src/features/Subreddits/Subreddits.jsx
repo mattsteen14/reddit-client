@@ -19,18 +19,13 @@ export const Subreddits = () => {
     const {
         data: subreddits,
         error,
-        isLoading,
         isSuccess
     } = useGetSubredditsQuery();
 
     return (
         <div className='subreddits'>
-            {isLoading && <h2>Loading...</h2>}
             {error &&
-                <div>
-                    <h2>Error: {error.status}</h2>
-                    <h3>{error.data?.message || error.message || error.error}</h3>
-                </div>
+                console.log(error)
             }
             {isSuccess && (
                 <div>

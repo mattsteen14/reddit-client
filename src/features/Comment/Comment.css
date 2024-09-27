@@ -6,6 +6,8 @@
     background-color: #f5f5f5;
 }
 
+/* Comment Header section */
+
 .comment-header {
     display: flex;
     justify-content: space-between;
@@ -17,6 +19,8 @@
     display: flex;
     align-items: center;
 }
+
+/* Comment Body section */
 
 .comment-body {
     margin-bottom: 10px;

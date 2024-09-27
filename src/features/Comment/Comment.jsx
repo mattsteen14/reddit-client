@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import './Comment.css';
 import { timeAgo } from '../../utils/timeAgo';
 import { useGetPostCommentsQuery } from '../../reddit/redditApiSlice';
@@ -14,12 +16,16 @@ export const Comment = ({ permalink }) => {
 
   return (
     <div>
-      {isLoading && <h2>Loading...</h2>}
+      {isLoading && 
+      <div>
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+      </div>
+      }
       {error &&
-        <div>
-          <h2>Error: {error.status}</h2>
-          <h3>{error.data?.message || error.message || error.error}</h3>
-        </div>
+        console.log(error)
       }
       {isSuccess && (
         <div >
