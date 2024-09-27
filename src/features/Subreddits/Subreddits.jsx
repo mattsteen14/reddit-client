@@ -4,11 +4,13 @@ import subredditLogo from '../../subredditLogo.svg';
 import './Subreddits.css';
 import { useGetSubredditsQuery } from '../../reddit/redditApiSlice';
 import { setSubreddit } from '../../reddit/subRedditSlice';
+import { setView } from '../View/viewSlice';
 
 export const Subreddits = () => {
     const dispatch = useDispatch();
     const changeSubreddit = (newSubreddit) => {
         dispatch(setSubreddit(newSubreddit));
+        dispatch(setView('home'));
     };
     const setPopular = () => {
         dispatch(setSubreddit('r/popular'));
