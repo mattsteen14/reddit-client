@@ -1,30 +1,60 @@
 header {
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
     height: max(60px, 10vh);
+    z-index: 1000;
     display: flex;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     justify-content: space-between;
     align-items: center;
     padding-left: max(40px, 3.5vw);
     padding-right: max(3vw, 30px);
     background-color: white;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 2px 4px;
 }
 
 .logo-icon {
-    color: red;
+    color: #5a9eef;
     transform: scale(3);
     margin-right: 20px;
 }
 
 .reddit-span {
-    color: red;
+    color: #5a9eef;
 }
 
-.logo > p {
+.logo>p {
     display: inline;
+    font-family: 'Reddit Sans', sans-serif;
     font-size: 24px;
+    font-weight: bold;
 }
 
+@media only screen and (max-width: 600px) {
+    header {
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .logo {
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .logo-icon {
+        transform: scale(2);
+    }
+
+    .logo>p {
+        font-size: 1em;
+    }
+
+    .search {
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

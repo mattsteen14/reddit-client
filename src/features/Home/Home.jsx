@@ -19,11 +19,10 @@ export const Home = () => {
     <div>
       {isLoading &&
         <div>
-          <h2>Loading...</h2>
           <PostLoading />
         </div>}
       {error &&
-        <div>
+        <div className='error'>
           <h2>Failed to load content.</h2>
           <h3>Error: {error.status}</h3>
           <h4>{error.data?.message || error.message || error.error}</h4>

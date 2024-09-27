@@ -3,7 +3,7 @@ import './PostLoading.css';
 
 export const PostLoading = () => {
     return (
-        <div>
+        <div className='post-loading'>
             
         </div>
     )

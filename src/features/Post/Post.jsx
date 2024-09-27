@@ -1,4 +1,4 @@
-import React from 'react'
+import { React, useState, useEffect, useRef } from 'react'
 import './Post.css';
 import { timeAgo } from '../../utils/timeAgo';
 import {
@@ -14,46 +14,65 @@ import {
 } from '../../reddit/redditApiSlice';
 
 export const Post = ({ post }) => {
+  const [isOverflowing, setIsOverflowing] = useState(false);
+  const postBodyRef = useRef(null);
+
+  useEffect(() => {
+    const element = postBodyRef.current;
+    if (element.scrollHeight > element.clientHeight) {
+      setIsOverflowing(true);
+    }
+  }, [post.selftext]);
+
   const {
     data: authorIcon,
   } = useGetAuthorIconQuery(post.author);
   return (
     <div className='post'>
       <div className='post-header'>
-        <img
-          src={post.subreddit_icon || subredditLogo}
-          onError={(e) => {e.target.src = subredditLogo}}
-          alt={`(${post.subreddit} icon)`}
-          className='subreddit-post-icon'
-          width='50px'
-          height='50px'
-        />
-        <span>
-          {post.subreddit_name_prefixed}
-        </span>
+        <div className='post-subreddit-info'>
+          <img
+            src={post.subreddit_icon || subredditLogo}
+            onError={(e) => { e.target.src = subredditLogo }}
+            alt={`(${post.subreddit} icon)`}
+            className='post-subreddit-icon'
+          />
+          <span className='post-subreddit-name'>
+            {post.subreddit_name_prefixed}
+          </span>
+        </div>
+
         <span
           className='post-timestamp'
         >
           {timeAgo(post.created_utc)}
         </span>
-        <img
-          src={authorIcon?.icon_img || userLogo}
-          onError={(e) => {e.target.src = userLogo}}
-          alt={`(${post.author} icon)`}
-          className='author-icon'
-          width='50px'
-          height='50px'
-        />
-        <span>
-          u/{post.author}
-        </span>
+
+        <div className='author-info'>
+          <img
+            src={authorIcon?.icon_img || userLogo}
+            onError={(e) => { e.target.src = userLogo }}
+            alt={`(${post.author} icon)`}
+            className='author-icon'
+          />
+          <span className='author-name'>
+            u/{post.author}
+          </span>
+        </div>
+
       </div>
       <div className='post-container'>
         <h2 className='post-title'>
           {post.title}
         </h2>
-        <p className='post-body'>
+        <p
+          className={`post-body ${isOverflowing ? 'has-more-content' : ''}`}
+          ref={postBodyRef}
+        >
           {post.selftext}
+          {isOverflowing &&
+            <div className='ellipsis-indicator'>
+            </div>}
         </p>
         <div className='post-image-container'>
           <img
@@ -65,15 +84,13 @@ export const Post = ({ post }) => {
       </div>
       <div className='post-footer'>
         <span>
-          <PiArrowFatUpLight />
+          <PiArrowFatUpLight className='icon' />
           {post.score}
         </span>
         <button>
-          <TiMessage />
-        </button>
-        <span>
+          <TiMessage className='icon' />
           {post.num_comments}
-        </span>
+        </button>
       </div>
     </div>
   )

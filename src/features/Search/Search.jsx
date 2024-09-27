@@ -21,7 +21,7 @@ export const Search = () => {
                     <PostLoading />
                 </div>}
             {error &&
-                <div>
+                <div className='error'>
                     <h2>Failed to load content.</h2>
                     <h3>Error: {error.status}</h3>
                     <h4>{error.data?.message || error.message || error.error}</h4>
@@ -36,7 +36,7 @@ export const Search = () => {
             }
             {isSuccess &&
                 <div className='post'>
-                    Results
+                    <h2 className='results-header'>Results</h2>
                     {posts.map((post) => (
                         <Card key={post.id}>
                             <Post post={post} />

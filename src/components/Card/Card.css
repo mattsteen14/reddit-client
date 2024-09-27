@@ -1,0 +1,11 @@
+.card {
+    max-width: 900px;
+    /* border: 1px solid black; */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
