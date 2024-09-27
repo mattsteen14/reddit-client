@@ -1,9 +1,6 @@
 import { React, useState, useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import './Post.css';
-import { Comment } from '../Comment/Comment';
-import { timeAgo } from '../../utils/timeAgo';
-import { toggleComments } from '../../reddit/redditSlice';
 import {
   TiMessage
 } from 'react-icons/ti';
@@ -11,10 +8,10 @@ import {
   PiArrowFatUpLight
 } from "react-icons/pi";
 import subredditLogo from '../../subredditLogo.svg';
-import userLogo from '../../userLogo.svg';
-import {
-  useGetAuthorIconQuery
-} from '../../reddit/redditApiSlice';
+import { timeAgo } from '../../utils/timeAgo';
+import { toggleComments } from '../../reddit/redditSlice';
+import { Avatar } from '../Avatar/Avatar';
+import { Comment } from '../Comment/Comment';
 
 export const Post = ({ post }) => {
   const dispatch = useDispatch();
@@ -26,9 +23,6 @@ export const Post = ({ post }) => {
       setIsOverflowing(true);
     }
   }, [post.selftext]);
-  const {
-    data: authorIcon,
-  } = useGetAuthorIconQuery(post.author);
   const commentsVisible = useSelector((state) => state.reddit.commentsVisible[post.id]);
   const handleToggleComments = () => {
     dispatch(toggleComments(post.id));
@@ -55,12 +49,7 @@ export const Post = ({ post }) => {
         </span>
 
         <div className='author-info'>
-          <img
-            src={authorIcon?.icon_img || userLogo}
-            onError={(e) => { e.target.src = userLogo }}
-            alt={`(${post.author} icon)`}
-            className='author-icon'
-          />
+          <Avatar author={post.author} />
           <span className='author-name'>
             u/{post.author}
           </span>
