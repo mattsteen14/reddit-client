@@ -89,8 +89,16 @@
     margin-top: 10px;
 }
 
-.icon {
+.score-icon, .comments-icon {
     margin-right: 10px;
     font-size: 24px;
     color: #000;
+}
+
+.comments-icon:hover {
+    color: #0168e3;
+}
+
+.comments-icon.active {
+    color: #0168e3;
 }

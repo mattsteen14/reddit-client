@@ -79,15 +79,15 @@ export const Post = ({ post }) => {
       </div>
       <div className='post-footer'>
         <span>
-          <PiArrowFatUpLight className='icon' />
+          <PiArrowFatUpLight className='score-icon' />
           {post.score}
         </span>
         <button
           type='button'
-          className='comments-button'
+          className={'comments-button'}
           onClick={handleToggleComments}
         >
-          <TiMessage className='icon' />
+          <TiMessage className={`comments-icon ${commentsVisible ? 'active' : ''}`} />
           {post.num_comments}
         </button>
       </div>
