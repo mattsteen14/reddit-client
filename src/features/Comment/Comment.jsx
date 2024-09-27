@@ -2,6 +2,7 @@ import React from 'react'
 import './Comment.css';
 import { timeAgo } from '../../utils/timeAgo';
 import { useGetPostCommentsQuery } from '../../reddit/redditApiSlice';
+import { Avatar } from '../Avatar/Avatar';
 
 export const Comment = ({ permalink }) => {
   const {
@@ -24,14 +25,10 @@ export const Comment = ({ permalink }) => {
         <div className='comment'>
           {comments.map((comment) => (
             <div>
-              <img
-                src={comment.author.icon_img}
-                alt={`${comment.author} profile `}
-                className='user-profile-image'
-              />
-              <h3>
+              <Avatar author={comment.author} />
+              <span>
                 {comment.author}
-              </h3>
+              </span>
               <span
                 className='comment-timestamp'
               >

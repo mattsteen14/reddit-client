@@ -1,6 +1,9 @@
 import { React, useState, useEffect, useRef } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import './Post.css';
+import { Comment } from '../Comment/Comment';
 import { timeAgo } from '../../utils/timeAgo';
+import { toggleComments } from '../../reddit/redditSlice';
 import {
   TiMessage
 } from 'react-icons/ti';
@@ -14,19 +17,22 @@ import {
 } from '../../reddit/redditApiSlice';
 
 export const Post = ({ post }) => {
+  const dispatch = useDispatch();
   const [isOverflowing, setIsOverflowing] = useState(false);
   const postBodyRef = useRef(null);
-
   useEffect(() => {
     const element = postBodyRef.current;
     if (element.scrollHeight > element.clientHeight) {
       setIsOverflowing(true);
     }
   }, [post.selftext]);
-
   const {
     data: authorIcon,
   } = useGetAuthorIconQuery(post.author);
+  const commentsVisible = useSelector((state) => state.reddit.commentsVisible[post.id]);
+  const handleToggleComments = () => {
+    dispatch(toggleComments(post.id));
+  }
   return (
     <div className='post'>
       <div className='post-header'>
@@ -87,10 +93,20 @@ export const Post = ({ post }) => {
           <PiArrowFatUpLight className='icon' />
           {post.score}
         </span>
-        <button>
+        <button
+          type='button'
+          className='comments-button'
+          onClick={handleToggleComments}
+        >
           <TiMessage className='icon' />
           {post.num_comments}
         </button>
+        {commentsVisible && 
+        <div>
+        <Comment permalink={post.permalink} 
+        />
+        </div>
+        }
       </div>
     </div>
   )
