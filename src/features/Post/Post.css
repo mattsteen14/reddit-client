@@ -9,26 +9,12 @@
     word-break: break-word;
 }
 
-.post-subreddit-info, .author-info {
-    display: flex;
-    align-items: center;
-}
-
 .post-subreddit-icon, .author-icon {
     margin-right: 5px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     flex-shrink: 0;
-}
-
-.post-subreddit-name, .post-timestamp, .author-name {
-    /* margin-right: 5px; */
-    font-size: 14px;
-}
-
-.post-subreddit-name, .author-name {
-    font-weight: bold;
 }
 
 /* Post Content section */

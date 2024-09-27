@@ -43,7 +43,7 @@ export const Post = ({ post }) => {
         </div>
 
         <span
-          className='post-timestamp'
+          className='timestamp'
         >
           {timeAgo(post.created_utc)}
         </span>
@@ -90,13 +90,13 @@ export const Post = ({ post }) => {
           <TiMessage className='icon' />
           {post.num_comments}
         </button>
-        {commentsVisible && 
-        <div>
-        <Comment permalink={post.permalink} 
-        />
-        </div>
-        }
       </div>
+      {commentsVisible &&
+        <div>
+          <Comment permalink={post.permalink}
+          />
+        </div>
+      }
     </div>
   )
 }

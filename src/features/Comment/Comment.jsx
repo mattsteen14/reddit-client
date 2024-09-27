@@ -22,28 +22,27 @@ export const Comment = ({ permalink }) => {
         </div>
       }
       {isSuccess && (
-        <div className='comment'>
+        <div >
           {comments.map((comment) => (
-            <div>
-              <Avatar author={comment.author} />
-              <span>
-                {comment.author}
-              </span>
-              <span
-                className='comment-timestamp'
-              >
-                {timeAgo(comment.created_utc)}
-              </span>
-              <p
-                key={comment.id}
-              >
-                {comment.body}
-              </p>
+            <div key={comment.id}
+            className='comment'
+            >
+              <div className='comment-header'>
+                <div className='author-info'>
+                  <Avatar author={comment.author} />
+                  <span className='author-name'>u/{comment.author}</span>
+                </div>
+                <span className='timestamp'>
+                  {timeAgo(comment.created_utc)}
+                </span>
+              </div>
+              <div className='comment-body'>
+                <p>{comment.body}</p>
+              </div>
             </div>
           ))}
         </div>
-      )
-      }
+      )}
     </div>
   )
 }
