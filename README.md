@@ -19,7 +19,7 @@
 <h3 align="center">RedditAlready</h3>
 
   <p align="center">
-    Codecademy Full Stack Engineer path - Portfolio Project
+    Codecademy Front End Engineer path - Portfolio Project
     <br />
     <a href="https://github.com/mattsteen14/reddit-client"><strong>Explore the docs »</strong></a>
     <br />
@@ -68,9 +68,8 @@
 
 For this project, you will build an application for Reddit using everything you’ve learned, including React and Redux. Reddit is a website where people share links to articles, media and other things on the web. The Reddit API provides data which you will integrate into your application. The application will allow users to view and search posts and comments provided by the API."
 
-[Completed Project Example - RedditMinimal](https://reddit-client.netlify.app)
-
-### Project Objectives
+<details>
+<summary>Project Objectives</summary>
 
 - Integrate Reddit API into the application
 
@@ -101,6 +100,10 @@ For this project, you will build an application for Reddit using everything you�
 - Write unit tests for components using Jest and Enzyme
 
 - Write end-to-end tests for the application
+
+</details>
+
+[Completed Project Example - RedditMinimal](https://reddit-client.netlify.app)
 
 ### Project Design
 
