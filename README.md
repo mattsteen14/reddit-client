@@ -102,16 +102,6 @@ For this project, you will build an application for Reddit using everything youâ
 
 - Write end-to-end tests for the application
 
-### Future Work
-
-- Feature a log in button to allow users the ability to log into their reddit account
-
-- Add share button to posts
-
-- Create a hidden drop down menu column to filter data
-
-- Make the subreddits aside column appear when clicked
-
 ### Project Design
 
 As you can see from the wireframe below, I wanted to keep the design simple and minimal. There will be header section with the reddit logo and a span of 'Reddit' to be the same colour(TBD) on the left, a search bar in the middle then a log in button on the far right. 
@@ -123,6 +113,30 @@ The aside section to the right of the main section will display a stack of subre
 ### Wireframe
 
 ![RedditAlready wireframe](https://github.com/mattsteen14/reddit-client/blob/main/public/RedditAlready_wireframe1.png?raw=true)
+
+### Progress Report
+
+At this stage I feel that RedditAlready is a web app that meets Codecademys project brief. Overall I am happy with the design and I feel that we have made it our own. We have deviated from the initial design somewhat due to the limitations of the Reddit JSON API that we used. Basically this API does not allow write operations and it does not require an OAuth workflow. We noticed that in the RedditMinimal example site, clicking on the upvote and downvote buttons does not actually alter the vote score, the buttons just change colour. Therefore we decided that under the post, adjacent to the comment icon with the amount of comments we would do similar with an arrow icon with the amount of votes (score) displayed. Also due to the OAuth limitations we decided to put work on the login button on the backburner. It may be something we implement in the future but we would either need to use the official Reddit API or create our own backend.
+
+The discovery and implementation of the createApi slice really streamlined and simplified a lot of what we had to do and cut down the amount of actions and reducers that we would have had to set up. It was a challenge to render icon images (avatars, profile pictures) for subreddits and post authors. Then when it worked, it made us reach the rate limit more often but Joy suggested a new endpoint for the author images that worked better. Setting up fallback icon images was another challenge.
+
+### Future Work _(UPDATE)_
+
+- Testing & debugging. Write unit tests for components using Jest and Enzyme. Get 90+ scores on Lighthouse.
+
+- Explore alternative APIs for subreddit and author icon images to help with rate limit issue.
+
+- Improve the UX by dynamically rendering set error messages depending on type of error including one that would reference the rate limit.
+
+- Additional feature: Feature a log in button to allow users the ability to log into their reddit account _- as mentioned, we would need to either use the official Reddit API or create our own backend._
+
+- Additional feature: Add share button to posts _- investigate whether this would be possible with the JSON API limitations._
+
+- Additional feature: Create a hidden drop down menu column to filter data.
+
+- Additional feature: Make the subreddits aside column appear when clicked.
+
+- Additional feature: display in the header what subreddit or search term is active in View section as featured in the [Redducit](https://github.com/wilaxx/redducit) app by [wilaxx](https://github.com/wilaxx).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -247,12 +261,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - [x] Version control. Set up on GitHub.
 - [x] Plan project.
 - [x] Wireframe the application.
-- [ ] Create files and run it locally.
-- [ ] Build the components.
-- [ ] Add Reddit data.
+- [x] Create files and run it locally.
+- [x] Build the components.
+- [x] Add Reddit data.
 - [ ] Testing and dubugging.
+- [ ] Improve error states.
+- [ ] Explore alternative APIs for icon images.
 - [ ] Deploy and publish to the web.
 - [ ] Share on Codecademy forums for feedback.
+- [ ] Additional features.
 
 See the [open issues](https://github.com/mattsteen14/reddit-client/issues) for a full list of proposed features (and known issues).
 
@@ -293,9 +310,16 @@ Project Link: [https://github.com/mattsteen14/reddit-client](https://github.com/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [Mo Ashqar](https://github.com/ashqar) for introducing me to Codecademy in the first place. 
-* [Othneil Drew](https://github.com/othneildrew) for the README template.
-* [Choose an Open Source License](https://choosealicense.com)
+- [Mo Ashqar](https://github.com/ashqar) for introducing me to Codecademy in the first place. 
+- [Othneil Drew](https://github.com/othneildrew) for the README template.
+- [Choose an Open Source License](https://choosealicense.com)
+
+This has been a group project with other Codecademy learners:
+
+- [Joy Ometan](https://github.com/Jbhnd). Most contributuons so far. Layed the foundations for the css & created the search functionality.
+- [Adam Halnon](https://github.com/Halnon).
+- [Arunesh Kumar](https://github.com/ak287). Both participated in early discussions and had valuable insight in the group meeting.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
