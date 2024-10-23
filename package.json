@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
-    "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.5.2",
     "react": "^18.3.1",
@@ -44,6 +43,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-optional-chaining": "^7.24.8",
     "@babel/plugin-transform-private-property-in-object": "^7.24.7",
+    "@testing-library/jest-dom": "^6.6.2",
     "enzyme": "^3.11.0"
   }
 }

@@ -37,7 +37,10 @@ export const Post = ({ post }) => {
             alt={`(${post.subreddit} icon)`}
             className='post-subreddit-icon'
           />
-          <span className='post-subreddit-name'>
+          <span 
+          className='post-subreddit-name'
+          data-testid={'post-subreddit-name'}
+          >
             {post.subreddit_name_prefixed}
           </span>
         </div>
@@ -78,7 +81,9 @@ export const Post = ({ post }) => {
         </div>
       </div>
       <div className='post-footer'>
-        <span>
+        <span
+        data-testid={`post-score-${post.id}`}
+        >
           <PiArrowFatUpLight className='score-icon' />
           {post.score}
         </span>
@@ -86,6 +91,7 @@ export const Post = ({ post }) => {
           type='button'
           className={'comments-button'}
           onClick={handleToggleComments}
+          data-testid={`post-comments-${post.id}`}
         >
           <TiMessage className={`comments-icon ${commentsVisible ? 'active' : ''}`} />
           {post.num_comments}
@@ -100,3 +106,4 @@ export const Post = ({ post }) => {
     </div>
   )
 }
+
