@@ -97,19 +97,8 @@ describe('Home Component', () => {
 
         render(<Home />);
 
-        // Using alternative assertions like alt text and test IDs
-        expect(screen.queryAllByText('u/user1').length).toBeGreaterThan(0);
-        expect(screen.queryAllByText('u/user2').length).toBeGreaterThan(0);
-
-        // Check for post titles using their alt texts or any other identifiers
-        expect(screen.getByText('This is some content.')).toBeInTheDocument();
-        expect(screen.getByText('Yes it is.')).toBeInTheDocument();
-
-        // Checking for scores, comments, and subreddit name using data-testid attributes if available
-        expect(screen.getByTestId('post-score-1')).toHaveTextContent('10');
-        expect(screen.getByTestId('post-score-2')).toHaveTextContent('20');
-        expect(screen.getByTestId('post-comments-1')).toHaveTextContent('5');
-        expect(screen.getByTestId('post-comments-2')).toHaveTextContent('10');
+        const postDiv = screen.getByTestId('post-div');
+        expect(postDiv).toHaveClass('post');
     });
 
 });

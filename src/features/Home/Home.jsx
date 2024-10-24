@@ -36,7 +36,10 @@ export const Home = () => {
         </div>
       }
       {isSuccess && (
-        <div className='post'>
+        <div 
+        className='post'
+        data-testid='post-div'
+        >
           {posts.map((post) => (
             <Card
               key={post.id}
