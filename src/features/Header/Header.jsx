@@ -21,7 +21,10 @@ export const Header = () => {
   return (
     <header>
         <div className='logo'>
-            <FaReddit className='logo-icon'/>
+            <FaReddit 
+            className='logo-icon'
+            role='img'
+            />
             <p><span className='reddit-span'>Reddit</span>Already</p>
         </div>
         <form className='search' onSubmit={handleSearch}>
