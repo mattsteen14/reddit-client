@@ -17,7 +17,7 @@ export const Comment = ({ permalink }) => {
   return (
     <div>
       {isLoading && 
-      <div>
+      <div data-testid="comment-loading">
         <Skeleton />
         <Skeleton />
         <Skeleton />
@@ -25,7 +25,9 @@ export const Comment = ({ permalink }) => {
       </div>
       }
       {error &&
+        <div data-testid="comment-error">
         console.log(error)
+        </div>
       }
       {isSuccess && (
         <div >

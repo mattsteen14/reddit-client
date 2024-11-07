@@ -20,6 +20,17 @@ describe('Subreddits Component', () => {
     afterEach(() => {
         jest.clearAllMocks();
     })
+
+    test('renders error state', () => {
+        useGetSubredditsQuery.mockReturnValue({
+            isLoading: false,
+            data: null,
+            error: true,
+            isSuccess: false
+        });
+        render(<Subreddits />);
+        expect(screen.getByTestId('subreddits-error')).toBeInTheDocument();
+    })
     
     test('renders list of subreddits', () => {
         const mockSubreddits = [

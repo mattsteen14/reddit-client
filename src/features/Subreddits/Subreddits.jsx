@@ -25,7 +25,9 @@ export const Subreddits = () => {
     return (
         <div className='subreddits'>
             {error &&
+                <div data-testid="subreddits-error">
                 console.log(error)
+                </div>
             }
             {isSuccess && (
                 <div>
