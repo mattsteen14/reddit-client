@@ -1,4 +1,4 @@
-import subRedditReducer from '../subRedditSlice.js';
+import subRedditReducer, { setSubreddit } from '../subRedditSlice.js';
 
 describe('subRedditSlice', () => {
     it('should return the initial state', () => {
@@ -7,8 +7,7 @@ describe('subRedditSlice', () => {
             subReddit: 'r/popular'});
     });
     it('should handle setSubreddit', () => {        
-        const action = { type: 'subReddit/setSubreddit', payload: 'r/test' };
-        const state = subRedditReducer({ subReddit: 'r/popular'}, action);
+        const state = subRedditReducer({ subReddit: 'r/popular'}, setSubreddit('r/test'));
         expect(state).toEqual({
             subReddit: 'r/test'});
     });
