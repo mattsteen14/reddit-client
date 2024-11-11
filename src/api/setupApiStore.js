@@ -14,7 +14,7 @@ export const setupApiStore = (api) => {
             view: viewReducer,
             [api.reducerPath]: api.reducer,
         },
-        middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware)
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware),
     });
     const wrapper = ({ children }) => <Provider store={store}>{children}</Provider>;
     return { store, wrapper };
