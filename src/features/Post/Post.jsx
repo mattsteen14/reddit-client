@@ -1,5 +1,6 @@
 import { React, useState, useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import moment from 'moment';
 import './Post.css';
 import {
   TiMessage
@@ -8,7 +9,6 @@ import {
   PiArrowFatUpLight
 } from "react-icons/pi";
 import subredditLogo from '../../subredditLogo.svg';
-import { timeAgo } from '../../utils/timeAgo';
 import { toggleComments } from '../../reddit/redditSlice';
 import { Avatar } from '../Avatar/Avatar';
 import { Comment } from '../Comment/Comment';
@@ -48,7 +48,7 @@ export const Post = ({ post }) => {
         <span
           className='timestamp'
         >
-          {timeAgo(post.created_utc)}
+          {moment(post.created_utc * 1000).fromNow()}
         </span>
 
         <div className='author-info'>

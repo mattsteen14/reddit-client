@@ -1,8 +1,8 @@
 import React from 'react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import moment from 'moment';
 import './Comment.css';
-import { timeAgo } from '../../utils/timeAgo';
 import { useGetPostCommentsQuery } from '../../reddit/redditApiSlice';
 import { Avatar } from '../Avatar/Avatar';
 
@@ -41,7 +41,7 @@ export const Comment = ({ permalink }) => {
                   <span className='author-name'>u/{comment.author}</span>
                 </div>
                 <span className='timestamp'>
-                  {timeAgo(comment.created_utc)}
+                  {moment(comment.created_utc * 1000).fromNow()}
                 </span>
               </div>
               <div className='comment-body'>
