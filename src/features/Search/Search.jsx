@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { Card } from '../../components/Card/Card';
 import { useGetSearchResultsQuery } from '../../reddit/redditApiSlice'
+import { LoadingErrorWrapper } from '../../components/LoadingErrorWrapper/LoadingErrorWrapper';
 import { Post } from '../Post/Post'
-import { PostLoading } from '../Post/PostLoading'
 
 export const Search = () => {
     const term = useSelector((state) => state.search.search) || 'popular';
@@ -14,26 +14,10 @@ export const Search = () => {
     } = useGetSearchResultsQuery(term);
 
     return (
-        <div>
-            {isLoading &&
-                <div>
-                    <h2>Loading...</h2>
-                    <PostLoading />
-                </div>}
-            {error &&
-                <div className='error'>
-                    <h2>Failed to load content.</h2>
-                    <h3>Error: {error.status}</h3>
-                    <h4>{error.data?.message || error.message || error.error}</h4>
-                    <button
-                        type='button'
-                        className='retry-button'
-                        onClick={() => window.location.reload()}
-                    >
-                        TRY AGAIN
-                    </button>
-                </div>
-            }
+        <LoadingErrorWrapper
+            isLoading={isLoading}
+            error={error}
+        >
             {isSuccess &&
                 <div className='post'>
                     <h2 className='results-header'>Results</h2>
@@ -44,6 +28,6 @@ export const Search = () => {
                     ))}
                 </div>
             }
-        </div>
+        </LoadingErrorWrapper>
     )
 }
