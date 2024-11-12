@@ -1,3 +1,5 @@
+/* Container */
+
 aside {
     position: sticky;
     top: max(60px, 10vh);
@@ -11,6 +13,8 @@ aside {
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
 
+/* Error and loading states */
+
 .subreddits-error h2,
 .subreddits-loading h2 {
     font-size: 1.5rem;
@@ -18,7 +22,6 @@ aside {
     margin-bottom: 10px;
 }
 
-/* Apply button styles from .subreddits button */
 .subreddits-error button,
 .subreddits-loading button {
     width: 100%;
@@ -61,6 +64,8 @@ aside {
         transform: rotate(720deg);
     }
 }
+
+/* Subreddits */
 
 .subreddits {
     min-height: var(--content-height);

@@ -9,15 +9,15 @@
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
 
-.post-subreddit-info,  .author-info {
+.post-subreddit-info, .author-info {
     display: flex;
     align-items: center;
 }
 
-.post-subreddit-name, .timestamp, .author-name {
+.post-subreddit-name, .timestamp, .author-name, .error-username {
     font-size: 14px;
 }
 
-.post-subreddit-name, .author-name {
+.post-subreddit-name, .author-name, .error-username {
     font-weight: bold;
 }
