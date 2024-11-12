@@ -11,6 +11,43 @@ aside {
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
 
+/* Apply button styles from .subreddits button */
+.subreddits-error button {
+    width: 100%;
+    height: 60px;
+    line-height: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    column-gap: 10px;
+    font-weight: 600;
+    color: #555555;
+    /* background-color: #f8f8f8; */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.subreddits-error button:hover {
+    background-color: #eeeeee;
+}
+
+.subreddits-error-icon {
+    width: auto;
+    height: 50px;
+    border-radius: 50%;
+    color: #5a9eef;
+    /* transform: scale(3);
+    margin-right: 20px; */
+}
+
+.subreddits-error h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
 .subreddits {
     min-height: var(--content-height);
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { FaFaceSadTear } from "react-icons/fa6";
 import subredditLogo from '../../subredditLogo.svg';
 import './Subreddits.css';
 import { useGetSubredditsQuery } from '../../reddit/redditApiSlice';
@@ -25,8 +26,25 @@ export const Subreddits = () => {
     return (
         <div className='subreddits'>
             {error &&
-                <div data-testid="subreddits-error">
-                console.log(error)
+                <div
+                    data-testid="subreddits-error"
+                    className='subreddits-error'
+                >
+                    <h2>Subreddits</h2>
+                    <ul>
+                        <li>
+                            <button
+                                type='button'
+                                onClick={() => window.location.reload()}
+                            >
+                                <FaFaceSadTear 
+                                className='subreddits-error-icon'
+                                role='img'
+                                />
+                                SubredditsLoadFail
+                            </button>
+                        </li>
+                    </ul>
                 </div>
             }
             {isSuccess && (
@@ -35,8 +53,8 @@ export const Subreddits = () => {
                     <ul>
                         <li>
                             <button
-                            type='button'
-                            onClick={setPopular}
+                                type='button'
+                                onClick={setPopular}
                             >
                                 <img
                                     src={subredditLogo}

@@ -26,7 +26,7 @@ export const Comment = ({ permalink }) => {
       }
       {error &&
         <div data-testid="comment-error">
-        console.log(error)
+        <h3>Error loading comments.</h3>
         </div>
       }
       {isSuccess && (

@@ -23,9 +23,9 @@ export const Home = () => {
         </div>}
       {error &&
         <div className='error'>
-          <h2>Failed to load content.</h2>
-          <h3>Error: {error.status}</h3>
-          <h4>{error.data?.message || error.message || error.error}</h4>
+          <h1>Failed to load content.</h1>
+          <h2>Error: {error.status}</h2>
+          <h3>{error.message || 'An error occurred'}</h3>
           <button
             type='button'
             className='retry-button'
@@ -36,9 +36,9 @@ export const Home = () => {
         </div>
       }
       {isSuccess && (
-        <div 
-        className='post'
-        data-testid='post-div'
+        <div
+          className='post'
+          data-testid='post-div'
         >
           {posts.map((post) => (
             <Card
