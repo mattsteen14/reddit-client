@@ -1,0 +1,31 @@
+.error {
+    max-width: 900px;
+    max-height: var(--content-height);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: white;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    align-items: center;
+    justify-content: center;
+    line-height: 2.5;
+}
+
+.retry-button {
+    background-color: #5a9eef;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.retry-button:hover {
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
