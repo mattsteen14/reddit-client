@@ -15,7 +15,7 @@
 }
 
 .retry-button {
-    background-color: #5a9eef;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     outline: none;
@@ -28,4 +28,8 @@
 
 .retry-button:hover {
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.retry-button:active {
+    box-shadow: none;
 }

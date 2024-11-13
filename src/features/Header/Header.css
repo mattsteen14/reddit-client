@@ -6,7 +6,6 @@ header {
     height: max(60px, 10vh);
     z-index: 1000;
     display: flex;
-    /* border-bottom: 1px solid black; */
     justify-content: space-between;
     align-items: center;
     padding-left: max(40px, 3.5vw);
@@ -15,24 +14,30 @@ header {
     box-shadow: rgba(3, 102, 214, 0.3) 0px 2px 4px;
 }
 
-.logo-icon {
-    color: #5a9eef;
-    transform: scale(3);
-    margin-right: 20px;
-}
-
-.reddit-span {
-    color: #5a9eef;
-}
-
-.logo>p {
-    display: inline;
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    font-size: 1.5rem;
     font-family: 'Reddit Sans', sans-serif;
-    font-size: 24px;
     font-weight: bold;
 }
 
+.logo-icon {
+    font-size: 3rem; /* or adjust based on design */
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+    color: var(--primary-color);
+}
+
+.reddit-span {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
 @media only screen and (max-width: 600px) {
+    
     header {
         flex-wrap: nowrap;
         white-space: nowrap;
@@ -40,16 +45,6 @@ header {
 
     .logo {
         width: 100%;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .logo-icon {
-        transform: scale(2);
-    }
-
-    .logo>p {
-        font-size: 1em;
     }
 
     .search {
@@ -57,4 +52,17 @@ header {
         margin-left: 10px;
         margin-right: 10px;
     }
+}
+
+@media only screen and (max-width: 450px) {
+
+    header {
+        padding-left: max(20px, 1.5vw);
+        padding-right: max(3vw, 10px);
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+    
 }

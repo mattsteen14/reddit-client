@@ -34,7 +34,8 @@ export const Post = ({ post }) => {
           <img
             src={post.subreddit_icon || subredditLogo}
             onError={(e) => { e.target.src = subredditLogo }}
-            alt={`(${post.subreddit} icon)`}
+            alt={`Icon of subreddit ${post.subreddit}`}
+            loading='lazy'
             className='post-subreddit-icon'
           />
           <span 
@@ -76,6 +77,7 @@ export const Post = ({ post }) => {
           <img
             src={post.url}
             alt=""
+            loading='lazy'
             className="post-image"
           />
         </div>

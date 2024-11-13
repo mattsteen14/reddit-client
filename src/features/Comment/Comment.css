@@ -7,7 +7,7 @@
 }
 
 .error-icon {
-    color: #5a9eef;
+    color: var(--primary-color);
 }
 
 /* Comment Header section */

@@ -9,8 +9,9 @@ export const Avatar = ({ author }) => {
     <img
       src={authorIcon?.icon_img || userLogo}
       onError={(e) => { e.target.src = userLogo }}
-      alt={`(${author} icon)`}
+      alt={`Avatar of user ${author}`}
       className='author-icon'
+      loading='lazy'
     />
   )
 }

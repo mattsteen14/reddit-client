@@ -48,7 +48,7 @@ aside {
     width: auto;
     height: 50px;
     border-radius: 50%;
-    color: #5a9eef;
+    color: var(--primary-color);
 }
 
 .subreddits-loader {

@@ -5,7 +5,7 @@ import './Header.css';
 import { HiOutlineSearch } from "react-icons/hi";
 import { FaReddit } from "react-icons/fa";
 // import { CiLogin, CiLogout } from "react-icons/ci";
-import { setSearch } from '../Search/searchSlice';
+import { setSearch, delSearch } from '../Search/searchSlice';
 import { setView } from '../View/viewSlice';
 
 export const Header = () => {
@@ -14,6 +14,7 @@ export const Header = () => {
   
   const handleSearch = (e) => {
     e.preventDefault();
+    dispatch(delSearch())
     dispatch(setView('search'))
     dispatch(setSearch(searchInputLocal))
   }
@@ -37,9 +38,6 @@ export const Header = () => {
             <button type='submit' aria-label='Search'>
                 <HiOutlineSearch />
             </button>
-              {/* <button>
-              <CiLogin />
-              </button> */}
         </form>
     </header>
   )

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { FaFaceSadTear } from "react-icons/fa6";
 import { FaReddit } from "react-icons/fa";
@@ -10,13 +10,13 @@ import { setView } from '../View/viewSlice';
 
 export const Subreddits = () => {
     const dispatch = useDispatch();
-    const changeSubreddit = (newSubreddit) => {
+    const changeSubreddit = useCallback((newSubreddit) => {
         dispatch(setSubreddit(newSubreddit));
         dispatch(setView('home'));
-    };
-    const setPopular = () => {
+    }, [dispatch]);
+    const setPopular = useCallback(() => {
         dispatch(setSubreddit('r/popular'));
-    }
+    }, [dispatch]);
 
     const {
         data: subreddits,
@@ -97,8 +97,9 @@ export const Subreddits = () => {
                                 >
                                     <img
                                         src={subreddit.icon_img || subredditLogo}
-                                        alt={`${subreddit.display_name} icon `}
+                                        alt={`Icon of subreddit ${subreddit.display_name}`}
                                         className='subreddit-icon'
+                                        loading='lazy'
                                     />
                                     {subreddit.display_name}
                                 </button>
