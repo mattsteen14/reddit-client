@@ -131,6 +131,8 @@ For a calming user experience, I chose a soft blue and white colour scheme and u
 
 To handle rate limits gracefully, we implemented friendly and informative error messages. Then to further enhance the user experience I created loading states using animations and transitions that fit seamlessly within the overall design. Together, these details make RedditAlready a functional and enjoyable Reddit browsing tool.
 
+Overall this was an enjoyable project that took around two months to complete while working around other projects and Codecademy modules. Doing this as a group project was a valuable experience. I put out messages on the Codecademy forum, circle community and discord where I had a number of responses. I then set us up a Slack where we could communicate. We implemented an Agile workflow using kanban boards on Slack and GitHub Projects. We discussed pull requests thoroughly, refining each iteration before merging code into the main branch.
+
 ### Wireframe
 
 ![RedditAlready wireframe](https://github.com/mattsteen14/RedditAlready/blob/main/public/RedditAlready_wireframe1.png?raw=true)
