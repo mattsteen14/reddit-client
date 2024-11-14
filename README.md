@@ -24,7 +24,7 @@
     <a href="https://github.com/mattsteen14/RedditAlready"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/mattsteen14/RedditAlready">View Demo</a>
+    <a href="https://redditalready.netlify.app/">View Site</a>
     ·
     <a href="https://github.com/mattsteen14/RedditAlready/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
@@ -63,15 +63,6 @@
 
 ## About The Project
 
-RedditAlready is a Reddit client built as part of Codecademy’s Front End Engineer path. The app allows users to browse, search, and explore Reddit content in a responsive, streamlined interface.
-
-While the design aligns closely with Codecademy’s project brief, we made certain adjustments to work effectively with the Reddit JSON API, which does not allow write operations or require OAuth. For instance, similar to the [RedditMinimal example site](https://reddit-client.netlify.app), our upvote and downvote buttons do not alter the vote count, as the API doesn’t support it. Instead, we show the vote score next to a static arrow icon under each post, adjacent to the comment icon and comment count.
-
-Using the createApi slice from Redux Toolkit significantly reduced the setup complexity, streamlining actions and reducers. However, integrating avatar images for subreddits and post authors proved challenging and occasionally caused rate limits. Fortunately, we resolved this with a more efficient endpoint for author images.
-
-For a calming user experience, I chose a soft blue and white colour scheme and used rounded fonts. To improve text readability, an animated ellipsis appears for longer text, expanding fully on hover.
-
-To handle rate limits gracefully, we implemented friendly and informative error messages. Then to further enhance the user experience I created loading states using animations and transitions that fit seamlessly within the overall design. Together, these details make RedditAlready a functional and enjoyable Reddit browsing tool.
 
 <details>
 <summary>Codecademy Project Objectives</summary>
@@ -79,6 +70,12 @@ To handle rate limits gracefully, we implemented friendly and informative error 
 - For this project, you will build an application for Reddit using everything you’ve learned, including React and Redux.
 
 - The application will allow users to view and search posts and comments provided by the Reddit API.
+
+- Wireframe your application
+
+- Use a project management tool (GitHub Projects) to plan your work
+
+- Write a README (using Markdown) that documents your project including: wireframes, technologies used, features, future work
 
 - Integrate Reddit API into the application
 
@@ -92,8 +89,6 @@ To handle rate limits gracefully, we implemented friendly and informative error 
 
 - The main home screen will be a feed of the most recent and relevant posts from all subreddits
 
-- Users will be able to upvote and downvote posts with the total votes being updated instantly on the app
-
 - All of the comments for each post will be initially hidden but will appear when the user clicks on the comment icon
 
 - The application will allow users to search for posts and comments provided by the API
@@ -106,11 +101,41 @@ To handle rate limits gracefully, we implemented friendly and informative error 
 
 - Users are able to leave an error state
 
+- Users can use the application on any device (desktop to mobile)
+
+- Users can use the application on any modern browser
+
+- Users are delighted with a cohesive design system
+
 - Write unit tests for components using Jest and Enzyme
 
 - Write end-to-end tests for the application
 
+- Get 90+ scores on Lighthouse
+
+- Publish to the web
+
+- Users can access your application at a URL
+
+- OPTIONAL: Make your application a progressive web app
+
 </details>
+
+<br>
+
+RedditAlready is a Reddit client built as part of Codecademy’s Front End Engineer path. The app allows users to browse, search, and explore Reddit content in a responsive, streamlined interface.
+
+Using the createApi slice from Redux Toolkit significantly reduced the setup complexity, streamlining actions and reducers. However, integrating avatar images for subreddits and post authors proved challenging and occasionally caused rate limits. Fortunately, we resolved this with a more efficient endpoint for author images.
+
+For a calming user experience, I chose a soft blue and white colour scheme and used rounded fonts. To improve text readability, an animated ellipsis appears for longer text, expanding fully on hover.
+
+To handle rate limits gracefully, we implemented friendly and informative error messages. Then to further enhance the user experience I created loading states using animations and transitions that fit seamlessly within the overall design. Together, these details make RedditAlready a functional and enjoyable Reddit browsing tool.
+
+### Wireframe
+
+![RedditAlready wireframe](https://github.com/mattsteen14/RedditAlready/blob/main/public/RedditAlready_wireframe1.png?raw=true)
+
+As you can see from my initial wireframe, while the design aligns closely with Codecademy’s project brief, we made certain adjustments to work effectively with the Reddit JSON API, which does not allow write operations or require OAuth. For instance, similar to the [RedditMinimal example site](https://reddit-client.netlify.app), our upvote and downvote buttons do not alter the vote count, as the API doesn’t support it. Instead of the up and down arrows to the left of the post, we show the vote score next to a static arrow icon under each post, adjacent to the comment icon and comment count. Due to the  complexity of implementing login functionality we decided early in development to scrap the login button. As a planned additional feature that space could be occupied with a window to display what subreddit or search term is active in the View section as featured in the [Redducit](https://github.com/wilaxx/redducit) app by [wilaxx](https://github.com/wilaxx).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -172,8 +197,7 @@ This is an example of how to list things you need to use the software and how to
 - [x] Deploy and publish to the web.
 - [x] Share on Codecademy forums for feedback.
 - [ ] Explore alternative APIs for icon images.
-- [ ] Additional features.
-- [ ] Additional feature: display in the header what subreddit or search term is active in View section as featured in the [Redducit](https://github.com/wilaxx/redducit) app by [wilaxx](https://github.com/wilaxx).
+- [ ] Additional feature: active subreddit or search term display in header.
 
 See the [open issues](https://github.com/mattsteen14/RedditAlready/issues) for a full list of proposed features (and known issues).
 
@@ -187,11 +211,27 @@ Contributions are what make the open source community such an amazing place to l
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Fork the Project.
+
+2. Create your Feature Branch:
+
+   ```sh
+   git checkout -b feature/AmazingFeature
+   ```
+
+3. Commit your Changes:
+
+   ```sh
+   git commit -m "Add some AmazingFeature"
+   ```
+
+4. Push to the Branch:
+
+   ```sh
+   git push origin feature/AmazingFeature
+   ```
+
+5. Open a Pull Request.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -207,7 +247,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Matt Steen-Brookes - [@mattsteen14](https://twitter.com/mattsteen14) - mattsteen14@me.com
 
-Project Link: [https://github.com/mattsteen14/RedditAlready](https://github.com/mattsteen14/RedditAlready)
+Portfolio Link: [https://mattsteen14.github.io/portfolio/](https://mattsteen14.github.io/portfolio/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
