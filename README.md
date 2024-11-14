@@ -21,14 +21,14 @@
   <p align="center">
     Codecademy Front End Engineer path - Portfolio Project
     <br />
-    <a href="https://github.com/mattsteen14/reddit-client"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/mattsteen14/RedditAlready"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/mattsteen14/reddit-client">View Demo</a>
+    <a href="https://github.com/mattsteen14/RedditAlready">View Demo</a>
     ·
-    <a href="https://github.com/mattsteen14/reddit-client/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/mattsteen14/RedditAlready/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/mattsteen14/reddit-client/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/mattsteen14/RedditAlready/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -60,16 +60,25 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
-### Codecademy Project Brief
+RedditAlready is a Reddit client built as part of Codecademy’s Front End Engineer path. The app allows users to browse, search, and explore Reddit content in a responsive, streamlined interface.
 
-### "​​Build Your Own Reddit App
+While the design aligns closely with Codecademy’s project brief, we made certain adjustments to work effectively with the Reddit JSON API, which does not allow write operations or require OAuth. For instance, similar to the [RedditMinimal example site](https://reddit-client.netlify.app), our upvote and downvote buttons do not alter the vote count, as the API doesn’t support it. Instead, we show the vote score next to a static arrow icon under each post, adjacent to the comment icon and comment count.
 
-For this project, you will build an application for Reddit using everything you’ve learned, including React and Redux. Reddit is a website where people share links to articles, media and other things on the web. The Reddit API provides data which you will integrate into your application. The application will allow users to view and search posts and comments provided by the API."
+Using the createApi slice from Redux Toolkit significantly reduced the setup complexity, streamlining actions and reducers. However, integrating avatar images for subreddits and post authors proved challenging and occasionally caused rate limits. Fortunately, we resolved this with a more efficient endpoint for author images.
+
+For a calming user experience, I chose a soft blue and white colour scheme and used rounded fonts. To improve text readability, an animated ellipsis appears for longer text, expanding fully on hover.
+
+To handle rate limits gracefully, we implemented friendly and informative error messages. Then to further enhance the user experience I created loading states using animations and transitions that fit seamlessly within the overall design. Together, these details make RedditAlready a functional and enjoyable Reddit browsing tool.
 
 <details>
-<summary>Project Objectives</summary>
+<summary>Codecademy Project Objectives</summary>
+
+- For this project, you will build an application for Reddit using everything you’ve learned, including React and Redux.
+
+- The application will allow users to view and search posts and comments provided by the Reddit API.
 
 - Integrate Reddit API into the application
 
@@ -103,44 +112,6 @@ For this project, you will build an application for Reddit using everything you�
 
 </details>
 
-[Completed Project Example - RedditMinimal](https://reddit-client.netlify.app)
-
-### Project Design
-
-As you can see from the wireframe below, I wanted to keep the design simple and minimal. There will be header section with the reddit logo and a span of 'Reddit' to be the same colour(TBD) on the left, a search bar in the middle then a log in button on the far right. 
-
-The main home section/component will display a vertical stream of posts that will have the subreddit, time posted and the OP name above each post, up/plus & down/minus arrows to the left of each post to upvote or downvote and display the amount of likes and below each post there will be a clickable comment icon with the amount of comments so far. Once clicked all of the comments for that post will display under the post. Ultimately I want the feed to display a stream of the most recent and relevant posts from all of the users followed subreddits.
-
-The aside section to the right of the main section will display a stack of subreddits to choose from so that the feed in the home component will only focus on that subreddits posts. Ideally, the user should be able to link the top 'home' link in order for the home component to display a feed of all most recent and relevant posts.
-
-### Wireframe
-
-![RedditAlready wireframe](https://github.com/mattsteen14/reddit-client/blob/main/public/RedditAlready_wireframe1.png?raw=true)
-
-### Progress Report
-
-At this stage I feel that RedditAlready is a web app that meets Codecademys project brief. Overall I am happy with the design and I feel that we have made it our own. We have deviated from the initial design somewhat due to the limitations of the Reddit JSON API that we used. Basically this API does not allow write operations and it does not require an OAuth workflow. We noticed that in the RedditMinimal example site, clicking on the upvote and downvote buttons does not actually alter the vote score, the buttons just change colour. Therefore we decided that under the post, adjacent to the comment icon with the amount of comments we would do similar with an arrow icon with the amount of votes (score) displayed. Also due to the OAuth limitations we decided to put work on the login button on the backburner. It may be something we implement in the future but we would either need to use the official Reddit API or create our own backend.
-
-The discovery and implementation of the createApi slice really streamlined and simplified a lot of what we had to do and cut down the amount of actions and reducers that we would have had to set up. It was a challenge to render icon images (avatars, profile pictures) for subreddits and post authors. Then when it worked, it made us reach the rate limit more often but Joy suggested a new endpoint for the author images that worked better. Setting up fallback icon images was another challenge.
-
-### Future Work _(UPDATE)_
-
-- Testing & debugging. Write unit tests for components using Jest and Enzyme. Get 90+ scores on Lighthouse.
-
-- Explore alternative APIs for subreddit and author icon images to help with rate limit issue.
-
-- Improve the UX by dynamically rendering set error messages depending on type of error including one that would reference the rate limit.
-
-- Additional feature: Feature a log in button to allow users the ability to log into their reddit account _- as mentioned, we would need to either use the official Reddit API or create our own backend._
-
-- Additional feature: Add share button to posts _- investigate whether this would be possible with the JSON API limitations._
-
-- Additional feature: Create a hidden drop down menu column to filter data.
-
-- Additional feature: Make the subreddits aside column appear when clicked.
-
-- Additional feature: display in the header what subreddit or search term is active in View section as featured in the [Redducit](https://github.com/wilaxx/redducit) app by [wilaxx](https://github.com/wilaxx).
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
@@ -152,6 +123,7 @@ The discovery and implementation of the createApi slice really streamlined and s
 - [Redux](https://redux.js.org)
 - [Node.js](https://nodejs.org/en)
 - [Visual Studio Code](https://code.visualstudio.com)
+- [Create React App](https://github.com/facebook/create-react-app)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -171,10 +143,9 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-<!-- 1. Get a free API Key at [https://example.com](https://example.com) -->
 1. Clone the repo
    ```sh
-   git clone https://github.com/mattsteen14/reddit-client.git
+   git clone https://github.com/mattsteen14/RedditAlready.git
    ```
 2. Install NPM packages
    ```sh
@@ -184,77 +155,6 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm start
    ```
-
-# Getting Started with Create React App and Redux
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -267,14 +167,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - [x] Create files and run it locally.
 - [x] Build the components.
 - [x] Add Reddit data.
-- [ ] Testing and dubugging.
-- [ ] Improve error states.
+- [x] Testing and dubugging.
+- [x] Improve error states.
+- [x] Deploy and publish to the web.
+- [x] Share on Codecademy forums for feedback.
 - [ ] Explore alternative APIs for icon images.
-- [ ] Deploy and publish to the web.
-- [ ] Share on Codecademy forums for feedback.
 - [ ] Additional features.
+- [ ] Additional feature: display in the header what subreddit or search term is active in View section as featured in the [Redducit](https://github.com/wilaxx/redducit) app by [wilaxx](https://github.com/wilaxx).
 
-See the [open issues](https://github.com/mattsteen14/reddit-client/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/mattsteen14/RedditAlready/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -306,20 +207,20 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Matt Steen-Brookes - [@mattsteen14](https://twitter.com/mattsteen14) - mattsteen14@me.com
 
-Project Link: [https://github.com/mattsteen14/reddit-client](https://github.com/mattsteen14/reddit-client)
+Project Link: [https://github.com/mattsteen14/RedditAlready](https://github.com/mattsteen14/RedditAlready)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-- [Mo Ashqar](https://github.com/ashqar) for introducing me to Codecademy in the first place. 
+- [Mo Ashqar](https://github.com/ashqar) for introducing me to Codecademy in the first place.
 - [Othneil Drew](https://github.com/othneildrew) for the README template.
 - [Choose an Open Source License](https://choosealicense.com)
 
 This has been a group project with other Codecademy learners:
 
-- [Joy Ometan](https://github.com/Jbhnd). Most contributuons so far. Layed the foundations for the css & created the search functionality.
+- [Joy Ometan](https://github.com/Jbhnd). Layed the foundations for the css & created the search functionality.
 - [Adam Halnon](https://github.com/Halnon).
 - [Arunesh Kumar](https://github.com/ak287). Both participated in early discussions and had valuable insight in the group meeting.
 
@@ -328,16 +229,16 @@ This has been a group project with other Codecademy learners:
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/mattsteen14/reddit-client.svg?style=for-the-badge
-[contributors-url]: https://github.com/mattsteen14/reddit-client/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/mattsteen14/reddit-client.svg?style=for-the-badge
-[forks-url]: https://github.com/mattsteen14/reddit-client/network/members
-[stars-shield]: https://img.shields.io/github/stars/mattsteen14/reddit-client.svg?style=for-the-badge
-[stars-url]: https://github.com/mattsteen14/reddit-client/stargazers
-[issues-shield]: https://img.shields.io/github/issues/mattsteen14/reddit-client.svg?style=for-the-badge
-[issues-url]: https://github.com/mattsteen14/reddit-client/issues
-[license-shield]: https://img.shields.io/github/license/mattsteen14/reddit-client.svg?style=for-the-badge
-[license-url]: https://github.com/mattsteen14/reddit-client/blob/main/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/mattsteen14/RedditAlready.svg?style=for-the-badge
+[contributors-url]: https://github.com/mattsteen14/RedditAlready/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/mattsteen14/RedditAlready.svg?style=for-the-badge
+[forks-url]: https://github.com/mattsteen14/RedditAlready/network/members
+[stars-shield]: https://img.shields.io/github/stars/mattsteen14/RedditAlready.svg?style=for-the-badge
+[stars-url]: https://github.com/mattsteen14/RedditAlready/stargazers
+[issues-shield]: https://img.shields.io/github/issues/mattsteen14/RedditAlready.svg?style=for-the-badge
+[issues-url]: https://github.com/mattsteen14/RedditAlready/issues
+[license-shield]: https://img.shields.io/github/license/mattsteen14/RedditAlready.svg?style=for-the-badge
+[license-url]: https://github.com/mattsteen14/RedditAlready/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/mattsteen14
 [product-screenshot]: /portfolio/resources/images/PortfolioScreenshot.png
