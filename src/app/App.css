@@ -15,10 +15,6 @@
   column-gap: 50px;
   padding: 20px;
   margin-top: max(60px, 10vh);
-  width: 100%;
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .app>main {
@@ -34,6 +30,15 @@
   min-width: fit-content;
   overflow-y: auto;
   margin-top: 10px;
+}
+
+@media screen and (min-width: 1280px) {
+  .app {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
