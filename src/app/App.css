@@ -17,19 +17,28 @@
   margin-top: max(60px, 10vh);
 }
 
-.app > main {
+.app>main {
   /* flex: 7 1 0; */
   flex: 7;
   min-width: 0;
   padding-top: 10px;
 }
 
-.app > aside {
+.app>aside {
   /* flex: 3 1 0; */
   flex: 3;
   min-width: fit-content;
   overflow-y: auto;
   margin-top: 10px;
+}
+
+@media screen and (min-width: 1280px) {
+  .app {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -48,11 +57,11 @@
     margin: 20px;
   }
 
-  .app > main {
+  .app>main {
     margin-top: max(60px, 10vh);
   }
 
-  .app > aside {
+  .app>aside {
     display: none;
   }
 }
@@ -64,7 +73,7 @@
     margin: 20px;
   }
 
-  .app > main {
+  .app>main {
     margin-top: max(60px, 10vh);
   }
 
