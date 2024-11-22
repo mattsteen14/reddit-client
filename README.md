@@ -259,6 +259,7 @@ Portfolio Link: [https://mattsteen14.github.io/portfolio/](https://mattsteen14.g
 - [Mo Ashqar](https://github.com/ashqar) for introducing me to Codecademy in the first place.
 - [Othneil Drew](https://github.com/othneildrew) for the README template.
 - [Choose an Open Source License](https://choosealicense.com)
+- [Richard Ayikwei](https://github.com/richardayikwei/richardayikwei) for centering content for wider screens.
 
 This has been a group project with other Codecademy learners:
 
