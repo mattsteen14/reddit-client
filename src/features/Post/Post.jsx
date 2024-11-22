@@ -27,6 +27,11 @@ export const Post = ({ post }) => {
   const handleToggleComments = () => {
     dispatch(toggleComments(post.id));
   }
+
+  const isImageUrl = (url) => {
+    return /\.(jpeg|jpg|gif|png)$/.test(url);
+  }
+
   return (
     <div className='post'>
       <div className='post-header'>
@@ -73,14 +78,14 @@ export const Post = ({ post }) => {
             <div className='ellipsis-indicator'>
             </div>}
         </p>
-        <div className='post-image-container'>
+        {isImageUrl(post.url) && <div className='post-image-container'>
           <img
             src={post.url}
             alt=""
             loading='lazy'
             className="post-image"
           />
-        </div>
+        </div>}
       </div>
       <div className='post-footer'>
         <span
