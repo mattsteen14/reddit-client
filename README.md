@@ -263,6 +263,7 @@ Portfolio Link: [https://mattsteen14.github.io/portfolio/](https://mattsteen14.g
 This has been a group project with other Codecademy learners:
 
 - [Joy Ometan](https://github.com/Jbhnd). Layed the foundations for the css & created the search functionality.
+- [Jak Rhodes-Smith](https://github.com/jakr-s). Recently added image URL validation for the Post component. Currently spearheading migration to vite with TypeScript integration. 
 - [Adam Halnon](https://github.com/Halnon).
 - [Arunesh Kumar](https://github.com/ak287). Both participated in early discussions and had valuable insight in the group meeting.
 
