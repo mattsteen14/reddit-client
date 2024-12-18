@@ -9,6 +9,11 @@
     word-break: break-word;
 }
 
+.post-subreddit-name, .timestamp, .author-name {
+    font-size: calc(0.4rem + 0.4vw);
+    padding: 0;
+}
+
 /* Post Content section */
 
 .post-title {

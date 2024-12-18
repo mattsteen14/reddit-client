@@ -1,7 +1,7 @@
 .post-subreddit-icon, .author-icon, .error-icon {
     margin-right: 5px;
-    width: 40px;
-    height: 40px;
+    width:calc(1rem + 1vw);
+    height:calc(1rem + 1vw);
     border-radius: 50%;
     flex-shrink: 0;
 }
